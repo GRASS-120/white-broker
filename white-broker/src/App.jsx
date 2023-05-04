@@ -1,15 +1,18 @@
 import { useContext } from 'react';
+import Header from './components/common/Footer/Header';
+import Footer from './components/common/Header/Footer';
 import { Context } from './context/context';
+import MainPage from './pages/MainPage';
 
 function App() {
    const data = useContext(Context);
 
    return (
-      <>
-         <p className="text-3xl font-bold underline">
-            {data.mainPage.banner[0].title}
-         </p>
-      </>
+      <div className="flex min-h-screen w-full flex-col">
+         <Header />
+         <MainPage />
+         <Footer />
+      </div>
    );
 }
 
