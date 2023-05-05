@@ -1,19 +1,14 @@
-import { useContext } from 'react';
-import Header from './components/common/Footer/Header';
-import Footer from './components/common/Header/Footer';
-import { Context } from './context/context';
-import MainPage from './pages/MainPage';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { RouterProvider } from 'react-router-dom';
+import './index.scss';
+import { router } from './router.jsx';
 
-function App() {
-   const data = useContext(Context);
+// решил объединить main.jsx и App.jsx, так как по отдельности
+// в них было мало смысла из-за небольшого количества кода (конкретно в данном проекте)
 
-   return (
-      <div className="flex min-h-screen w-full flex-col">
-         <Header />
-         <MainPage />
-         <Footer />
-      </div>
-   );
-}
-
-export default App;
+ReactDOM.createRoot(document.getElementById('root')).render(
+   <React.StrictMode>
+      <RouterProvider router={router} />
+   </React.StrictMode>
+);
