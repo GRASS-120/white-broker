@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
       ),
       children: [
          {
-            path: '/',
+            path: '/mainpage',
             element: (
                <Context.Provider value={mainPageData}>
                   <MainPage />
