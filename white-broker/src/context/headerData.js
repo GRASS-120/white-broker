@@ -6,7 +6,7 @@ export const headerData = {
       {
          id: 0,
          text: 'Главная',
-         href: './'
+         href: '/mainpage'
       },
       {
          id: 1,

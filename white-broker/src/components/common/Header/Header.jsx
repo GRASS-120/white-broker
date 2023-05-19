@@ -8,28 +8,30 @@ import { useState } from 'react';
 const Header = () => {
    let [open, setOpen]=useState(false)
    return (
-      <div className="h-32 my-5 relative ">
+      <div className="h-9 md:h-24 my-5 relative ">
          <div className='max-w-[1440px] m-auto container flex items-center justify-between '>
             <div className=''>
                <div className='text text-xl md:text-4xl'>
                   {headerData.title}
                </div>
-               <nav className={`' w-screen justify-between md:flex-wrap lg:flex-nowrap flex flex-col md:items-center md:flex-row z-10 md:z-auto   md:static absolute bg-white left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100  ${open ? 'left-0':'-left-[1000px]'}`}>
+               <nav  className={`' w-screen justify-between md:flex-wrap  mt-5 transition-all lg:flex-nowrap flex flex-col md:items-center md:flex-row z-10 md:z-auto   md:static absolute bg-white  md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100  ${open ? 'left-0':'-left-[1000px]'}`}>
                  
-                  {headerData.navbar.map(item => 
-                     <NavLink key='{item}'
+                  {headerData.navbar.map( (item, id) => 
+                     <NavLink key={id}
                         style={({isActive}) => ({
-                           color: isActive ? '#3DA1DA' : '#111010',
+                           color: isActive ? '#3DA1DA' : '',
+                           ":hover": { color: "green" },
                            margin: '10px',
-
                            })
                         }
+                        onClick={() => setOpen(!open)}
                         to={item.href}
-                        className={({ isActive, isPending }) =>
+                        className={({ isActive, isPending}) =>
                            isPending ? 'pending' : isActive ? 'active' : ''
                         }
                         >
                         {item.text}
+                        
                      </NavLink> 
                      
                   )}
@@ -39,7 +41,7 @@ const Header = () => {
                      <img className='m-1' src="whatsapp-b.png" alt="" />
                      {headerData.phoneNumber}
                      <div className=' text-xs  lg:text-xl mx-0 my-1'>
-                        <Button>ЗАКАЗАТЬ ЗВОНОК</Button>
+                        <Button children={'ЗАКАЗАТЬ ЗВОНОК'}></Button>
                      </div>
                   </div>
 
@@ -63,7 +65,7 @@ const Header = () => {
          </div>
             
 
-         <div className='h-1 w-screen absolute bottom-0 hidden bg-[#D9D9D9]'></div>
+         <div className='h-1 w-full absolute -bottom-5 bg-[#D9D9D9]'></div>
       </div>
    
       
