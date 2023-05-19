@@ -1,12 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-// ! досмотреть видос и разделить форму на компоненты (+ контроллеры)
-
-// ? пока хз в какую папку добавить форму + как лучше сделать:
-// ? одну переиспользуемую компоненту для нескольких случаев (как в дизайне)
-// ? или забить хуй и просто ctrl c + ctrl v?
-
 const Form = () => {
    const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
 
