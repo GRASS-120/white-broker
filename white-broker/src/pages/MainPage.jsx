@@ -6,6 +6,9 @@ import { mainPageData } from '../context/mainPageData';
 import { register } from 'swiper/element/bundle';
 import Skills from '../components/common/skills/Skills';
 import Button from '../components/ui/Button';
+import Product from '../components/common/Product/Product';
+import Calc from '../components/common/Calc/Calc';
+import Story from '../components/common/Story/Story';
 // register Swiper custom elements
 register();
 
@@ -20,8 +23,8 @@ const MainPage = () => {
                loop="true"
             >
                <swiper-slide class="swiper-slide">
-                  <div className="relative m-auto max-w-[1440px]">
-                     <div className="absolute  mt-5 max-w-[520px] lg:mt-32">
+                  <div className="relative m-auto max-w-[1440px] ">
+                     <div className="absolute mx-3 mt-5 max-w-[520px] lg:mt-32">
                         <Title>{mainPageData.banner.title}</Title>
                         <div className="my-5">
                            {mainPageData.banner.subtitles.map((item) => (
@@ -39,6 +42,7 @@ const MainPage = () => {
                      </div>
                   </div>
                   <img src="bomj.jpeg" alt="" />
+                  
                </swiper-slide>
 
                <swiper-slide class="swiper-slide">
@@ -68,7 +72,11 @@ const MainPage = () => {
             {/* в данном случае index как key можно использовать */}
          </div>
 
+
          <Skills />
+         <Calc />     
+         <Product />
+         <Story />
       </div>
    );
 };
