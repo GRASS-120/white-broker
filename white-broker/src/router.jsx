@@ -3,9 +3,12 @@ import { aboutData } from './context/aboutData';
 import Context from './context/context';
 import { mainPageData } from './context/mainPageData';
 import RouterLayout from './layouts/RouterLayout';
-import About from './pages/About';
+import BigCredit from './pages/BigCredit';
 import ErrorPage from './pages/ErrorPage';
 import MainPage from './pages/MainPage';
+import About from './pages/About';
+import Contacts from './pages/Contacts';
+import CreditItem from './pages/CreditItem';
 
 // Для того, чтобы внутри приложения работали компоненты из react-router-dom, нужно обернуть приложение
 // в контекст роутера (<BrowserRouter>). Однако этот компонент изначально возвращает только те компоненты, которые он
@@ -32,10 +35,34 @@ export const router = createBrowserRouter([
             ),
          },
          {
-            path: '/about',
+            path: '/BigCredit',
             element: (
                <Context.Provider value={aboutData}>
+                  <BigCredit />
+               </Context.Provider>
+            ),
+         },
+         {
+            path: '/about',
+            element: (
+               <Context.Provider>
                   <About />
+               </Context.Provider>
+            ),
+         },
+         {
+            path: '/contacts',
+            element: (
+               <Context.Provider>
+                  <Contacts />
+               </Context.Provider>
+            ),
+         },
+         {
+            path: '/CreditItem',
+            element: (
+               <Context.Provider>
+                  <CreditItem />
                </Context.Provider>
             ),
          },

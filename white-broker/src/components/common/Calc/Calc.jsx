@@ -12,7 +12,7 @@ const Calc = () => {
 
                 <div className='flex flex-col md:flex-row justify-center mx-3'>
                     <div className='max-w-[650px]'>
-                        <select>
+                        <select className='max-w-[100px]'>
                             <option value="someOption">{mainPageData.calculator.creditPresets[0].name}</option>
                             <option value="someOption">{mainPageData.calculator.creditPresets[1].name}</option>
                             <option value="someOption">{mainPageData.calculator.creditPresets[2].name}</option>
