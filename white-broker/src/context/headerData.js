@@ -11,22 +11,22 @@ export const headerData = {
       {
          id: 1,
          text: 'Крупный бизнес',
-         href: '/about'
+         href: '/BigCredit'
       },
       {
          id: 2,
          text: 'Малый бизнес',
-         href: ''
+         href: '/CreditItem'
       },
       {
          id: 3,
          text: 'О нас',
-         href: ''
+         href: '/about'
       },
          {
          id: 4,
          text: 'Контакты',
-         href: ''
+         href: '/contacts'
          },
       
    ]
