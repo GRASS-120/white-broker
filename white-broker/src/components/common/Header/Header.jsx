@@ -1,76 +1,75 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { headerData } from '../../../context/headerData';
 import Button from '../../ui/Button';
-import { useState } from 'react';
 
 // надо как-то интегрировать добавление классов в navlink через tailwind
 
 const Header = () => {
-   let [open, setOpen]=useState(false)
+   let [open, setOpen] = useState(false);
    return (
-      <div className="h-9 md:h-24 my-5 relative ">
-         <div className='max-w-[1440px] m-auto container flex items-center justify-between '>
-            <div className=''>
-               <div className='text text-xl md:text-4xl'>
+      <div className="relative my-5 h-9 md:h-24 ">
+         <div className="container m-auto flex max-w-[1440px] items-center justify-between ">
+            <div className="">
+               <div className="text text-xl md:text-4xl">
                   {headerData.title}
                </div>
-               <nav  className={`' w-screen justify-between md:flex-wrap  mt-5 transition-all lg:flex-nowrap flex flex-col md:items-center md:flex-row z-10 md:z-auto   md:static absolute bg-white  md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100  ${open ? 'left-0':'-left-[1000px]'}`}>
-                 
-                  {headerData.navbar.map( (item, id) => 
-                     <NavLink key={id}
-                        style={({isActive}) => ({
+               <nav
+                  className={`' absolute z-10 mt-5  flex w-screen flex-col justify-between bg-white py-4 pl-7 transition-all md:static   md:z-auto md:w-auto md:flex-row  md:flex-wrap md:items-center md:py-0 md:pl-0 md:opacity-100 lg:flex-nowrap  ${
+                     open ? 'left-0' : '-left-[1000px]'
+                  }`}
+               >
+                  {headerData.navbar.map((item, id) => (
+                     <NavLink
+                        key={id}
+                        style={({ isActive }) => ({
                            color: isActive ? '#3DA1DA' : '',
-                           ":hover": { color: "green" },
+                           ':hover': { color: 'green' },
                            margin: '10px',
-                           })
-                        }
+                        })}
                         onClick={() => setOpen(!open)}
                         to={item.href}
-                        className={({ isActive, isPending}) =>
+                        className={({ isActive, isPending }) =>
                            isPending ? 'pending' : isActive ? 'active' : ''
                         }
-                        >
+                     >
                         {item.text}
-                        
-                     </NavLink> 
-                     
-                  )}
-                  
-                  <div className='text-xl  md:hidden lg:text-3xl items-center '>
-                     <img className='m-1' src="telegram-b.png" alt="" />
-                     <img className='m-1' src="whatsapp-b.png" alt="" />
+                     </NavLink>
+                  ))}
+
+                  <div className="items-center  text-xl md:hidden lg:text-3xl ">
+                     <img className="m-1" src="telegram-b.png" alt="" />
+                     <img className="m-1" src="whatsapp-b.png" alt="" />
                      {headerData.phoneNumber}
-                     <div className=' text-xs  lg:text-xl mx-0 my-1'>
+                     <div className=" mx-0  my-1 text-xs lg:text-xl">
                         <Button children={'ЗАКАЗАТЬ ЗВОНОК'}></Button>
                      </div>
                   </div>
-
                </nav>
             </div>
 
-            <div className='text-xl  hidden md:flex lg:text-4xl items-center '>
-                  <img className='m-1' src="telegram-b.png" alt="" />
-                  <img className='m-1' src="whatsapp-b.png" alt="" />
-                  <div className='hidden text-3xl lg:block'>{headerData.phoneNumber}</div>
-                  <div className=' text-xl mx-5'>
-                     <Button>ЗАКАЗАТЬ ЗВОНОК</Button>
-                  </div>
-                  
-                  </div>           
-            <button class="text-3xl cursor-pointer mx-2 md:hidden block" name={open ? 'close': 'menu'} onClick={() => setOpen(!open)}>
-            <ion-icon name={open ? 'close':'menu'}></ion-icon>
-            
-         </button>
-                  
+            <div className="hidden  items-center text-xl md:flex lg:text-4xl ">
+               <img className="m-1" src="telegram-b.png" alt="" />
+               <img className="m-1" src="whatsapp-b.png" alt="" />
+               <div className="hidden text-3xl lg:block">
+                  {headerData.phoneNumber}
+               </div>
+               <div className=" mx-5 text-xl">
+                  <Button>ЗАКАЗАТЬ ЗВОНОК</Button>
+               </div>
+            </div>
+            <button
+               className="mx-2 block cursor-pointer text-3xl md:hidden"
+               name={open ? 'close' : 'menu'}
+               onClick={() => setOpen(!open)}
+            >
+               <ion-icon name={open ? 'close' : 'menu'}></ion-icon>
+            </button>
          </div>
-            
 
-         <div className='h-1 w-full absolute -bottom-5 bg-[#D9D9D9]'></div>
+         <div className="absolute -bottom-5 h-1 w-full bg-[#D9D9D9]"></div>
       </div>
-   
-      
    );
 };
-
 
 export default Header;

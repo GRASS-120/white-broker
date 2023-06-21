@@ -4,3 +4,7 @@
    2. https://www.youtube.com/watch?v=h2ZS5rTsuRQ
    3. https://www.youtube.com/watch?v=ic-P67jinhw
 3. docker не нужено. но как сделать: отдельно email-sendler, отдельно фронт) и добавить docker-compose.yaml и Docker.file в корневую папку или добавить email-sendler внутрь фронта и там его как-то запускать?
+
+!В ИНПУТЕ ФОРМЫ НА СТРАНИЦЕ МАЛОГО БИЗНЕСА ТЕКСТ БЕЛЫЙ, НАДО ПОФИКСИТЬ
+
+КАК ПОВЕСИТЬ REGISTER НА TEXTAREA В CONTACTS?
