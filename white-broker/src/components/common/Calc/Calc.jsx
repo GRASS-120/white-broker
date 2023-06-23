@@ -1,89 +1,143 @@
-import React from 'react';
+import { useState } from 'react';
+
 import { mainPageData } from '../../../context/mainPageData';
+import { monthToString, sumToString } from '../../../utils/calc';
 import Button from '../../ui/Button';
 
-
 const Calc = () => {
-    return (
-        <div className='my-10'>
-            <div className='max-w-[1440px] m-auto'>
-                <div className='text-4xl font-bold text-center'>{mainPageData.calculator.title}</div>
-                <p className='text-xl text-center my-4'>{mainPageData.calculator.subtitle}</p>
+   const [creditPreset, setCreditPreset] = useState(
+      mainPageData.calculator.creditPresets[0]
+   );
+   const [sumTrackbarVal, setSumTrackbarVal] = useState(creditPreset.sum_num);
+   const [monthTrackbarVal, setMonthTrackbarVal] = useState(
+      creditPreset.deadline_num
+   );
 
-                <div className='flex flex-col md:flex-row justify-center mx-3'>
-                    <div className='max-w-[650px]'>
-                        <select className='max-w-[100px]'>
-                            <option value="someOption">{mainPageData.calculator.creditPresets[0].name}</option>
-                            <option value="someOption">{mainPageData.calculator.creditPresets[1].name}</option>
-                            <option value="someOption">{mainPageData.calculator.creditPresets[2].name}</option>
-                            <option value="someOption">{mainPageData.calculator.creditPresets[3].name}</option>
-                            <option value="someOption">{mainPageData.calculator.creditPresets[4].name}</option>
-                            <option value="someOption">{mainPageData.calculator.creditPresets[5].name}</option>
-                            <option value="someOption">{mainPageData.calculator.creditPresets[6].name}</option>
-                            <option value="someOption">{mainPageData.calculator.creditPresets[7].name}</option>
-                            <option value="someOption">{mainPageData.calculator.creditPresets[8].name}</option>
-                            <option value="someOption">{mainPageData.calculator.creditPresets[9].name}</option>
-                            <option value="someOption">{mainPageData.calculator.creditPresets[10].name}</option>
-                            <option value="someOption">{mainPageData.calculator.creditPresets[11].name}</option>
-                            <option value="someOption">{mainPageData.calculator.creditPresets[12].name}</option>
-                            <option value="someOption">{mainPageData.calculator.creditPresets[13].name}</option>
-                        </select>
-                        <div>
-                            <div>
-                                <div className='flex justify-between'>
-                                    <p>Сумма кредита</p>
-                                    <p>5 000 000</p>
-                                </div>
-                                <div className='w-full h-4 bg-[#0276FF]'>
+   const changeSelectOpt = (index) => {
+      setCreditPreset(mainPageData.calculator.creditPresets[index]);
+      setSumTrackbarVal(mainPageData.calculator.creditPresets[index].sum_num);
+      setMonthTrackbarVal(
+         mainPageData.calculator.creditPresets[index].deadline_num
+      );
+   };
 
-                                </div>
-                                <div className='flex justify-between'>
-                                    <p>1р</p>
-                                    <p>30 000 000</p>
-                                </div>
-                            </div>
+   const changeSumByTrack = (value) => {
+      setSumTrackbarVal(value);
+      setCreditPreset({
+         ...creditPreset,
+         sum_num: value,
+         sum: sumToString(value),
+      });
+   };
 
-                            <div>
-                                <div className='flex justify-between'>
-                                    <p>Срок кредита</p>
-                                    <p>1 месяц</p>
-                                </div>
-                                <div className='w-full h-4 bg-[#0276FF]'>
+   const changeMonthByTrack = (value) => {
+      setMonthTrackbarVal(value);
+      setCreditPreset({
+         ...creditPreset,
+         deadline_num: value,
+         deadline: monthToString(value),
+      });
+   };
 
-                                </div>
-                                <div className='flex justify-between'>
-                                    <p>1р</p>
-                                    <p>60 месяцев</p>
-                                </div>
-                            </div>
-                            <Button children={'ОСТАВИТЬ ЗАЯВКУ'}></Button>
-                        </div>
-                    </div>
-
-
-                    <div className='rounded-xl border-2 border-solid border-[#5B41FF] p-5'>
-                        <p>Подберите подходящие вам условия</p>
-
-                        <div>Экспресс кредит</div>
-                        <div className='flex'>
-                            <p>Cумма - 5 000 000 р</p>
-                            <p>Срок - 12 месяцев</p>
-                        </div>
-                        <div>
-                            <div>
-                                <p>10%</p>
-                                <p>процентная ставка</p>
-                            </div>
-                            <div>
-                                <p>439 579 р</p>
-                                <p>Ежемесячный платеж</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+   return (
+      <div className="my-10">
+         <div className="m-auto max-w-[1440px]">
+            <div className="text-center text-4xl font-bold">
+               {mainPageData.calculator.title}
             </div>
-        </div>
-    )
-}
+            <p className="my-4 text-center text-xl">
+               {mainPageData.calculator.subtitle}
+            </p>
 
-export default Calc
+            <div className="mx-3 flex flex-col justify-center md:flex-row">
+               <div className="max-w-[650px]">
+                  <select
+                     className="max-w-[100px]"
+                     onChange={(e) => changeSelectOpt(e.target.value)}
+                  >
+                     {mainPageData.calculator.creditPresets.map(
+                        (item, index) => (
+                           <option key={'select_opt_' + index} value={index}>
+                              {item.name}
+                           </option>
+                        )
+                     )}
+                  </select>
+                  <div>
+                     <div>
+                        <div className="flex justify-between">
+                           <p>Сумма кредита</p>
+                           <p>{creditPreset.sum}</p>
+                        </div>
+                        <input
+                           type="range"
+                           value={sumTrackbarVal}
+                           onChange={(e) => changeSumByTrack(e.target.value)}
+                           min="500000"
+                           max="30000000"
+                        />
+                        {/* <div className="h-4 w-full bg-[#0276FF]"></div> */}
+                        <div className="flex justify-between">
+                           <p>5 000 000 ₽</p>
+                           <p>30 000 000 ₽</p>
+                        </div>
+                     </div>
+
+                     <div>
+                        <div className="flex justify-between">
+                           <p>Срок</p>
+                           <p>{creditPreset.deadline}</p>
+                        </div>
+                        <input
+                           type="range"
+                           value={monthTrackbarVal}
+                           onChange={(e) => changeMonthByTrack(e.target.value)}
+                           min="1"
+                           max="60"
+                        />
+                        {/* <div className="h-4 w-full bg-[#0276FF]"></div> */}
+                        <div className="flex justify-between">
+                           <p>1 месяц</p>
+                           <p>60 месяцев</p>
+                        </div>
+                     </div>
+                     <Button>ОСТАВИТЬ ЗАЯВКУ</Button>
+                  </div>
+               </div>
+
+               <div className="rounded-xl border-2 border-solid border-[#5B41FF] p-5">
+                  <p>Подберите подходящие вам условия</p>
+
+                  <div>{creditPreset.name}</div>
+                  <div className="flex">
+                     <p className="font-bold">
+                        Cумма -{' '}
+                        <span className="text-[#0276FF]">
+                           {creditPreset.sum}
+                        </span>
+                     </p>
+                     <p className="font-bold">
+                        Срок -{' '}
+                        <span className="text-[#0276FF]">
+                           {creditPreset.deadline}
+                        </span>
+                     </p>
+                  </div>
+                  <div>
+                     <div>
+                        <p className="font-bold">{creditPreset.percent}</p>
+                        <p className="text-[#0276FF]">Процентная ставка</p>
+                     </div>
+                     <div>
+                        <p className="font-bold">{creditPreset.payment}</p>
+                        <p className="text-[#0276FF]">Ежемесячный платеж</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   );
+};
+
+export default Calc;
