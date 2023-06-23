@@ -32,22 +32,13 @@ export const monthToString = (month) => {
    const strValue = String(month);
    let newMonth = '';
    let text = 'месяцев';
-
+   console.log(month);
    if (strValue.length == 1) {
       // 1-9 месяцев
-      switch (month) {
-         case 1:
-            text = 'месяц';
-            break;
-
-         case 2:
-         case 3:
-         case 4:
-            text = 'месяца';
-            break;
-
-         default:
-            break;
+      if (month == 1) {
+         text = 'месяц';
+      } else if (month > 1 && month <= 4) {
+         text = 'месяца';
       }
 
       newMonth = strValue + ' ' + text;
