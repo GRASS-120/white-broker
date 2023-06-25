@@ -27,6 +27,7 @@ const Calc = () => {
          ...creditPreset,
          sum_num: value,
          sum: sumToString(value),
+         name: 'Кастомный кредит',
       });
    };
 

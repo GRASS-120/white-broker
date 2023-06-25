@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -18,6 +19,11 @@ const Contacts = () => {
 
    const submit = (data) => {
       console.log(data);
+
+      // textarea
+      let formData = new FormData();
+      formData.append('comment', data);
+
       setIsSubmitSuccessful(true);
    };
 
@@ -25,10 +31,11 @@ const Contacts = () => {
       console.log(e);
    };
 
+   // textarea
    const commentEnterSubmit = (e) => {
       if (e.key === 'Enter' && e.shiftKey == false) {
-         const data = { content: e.target.value };
-         return handleSubmit(CommentOnSubmit(data));
+         const data = { comment: e.target.value };
+         return handleSubmit(submit(data));
       }
    };
 
@@ -81,6 +88,7 @@ const Contacts = () => {
                      onSubmit={handleSubmit(submit, errorHandler)}
                      className="flex flex-col"
                   >
+                     <p className="text-red-700">{errors.name?.message}</p>
                      <input
                         {...register('name', {
                            required: 'Необходимо ввести ваше имя',
@@ -98,12 +106,19 @@ const Contacts = () => {
                                  'В имени не должно быть цифр или других символов, только буквы',
                            },
                         })}
-                        className="mb-1 rounded-lg border-2 border-solid border-[#5B41FF] p-3 outline-none"
+                        className={classNames(
+                           'mb-2 rounded-lg border-2 border-solid border-[#5B41FF] p-3 outline-none ',
+                           {
+                              'border-red-700': errors.name,
+                           }
+                        )}
                         type="text"
                         placeholder="Ваше имя"
                      />
-                     <p className=" text-red-700">{errors.name?.message}</p>
 
+                     <p className=" text-red-700">
+                        {errors.phoneNumber?.message}
+                     </p>
                      <input
                         {...register('phoneNumber', {
                            required: 'Необходимо ввести номер телефона',
@@ -112,14 +127,17 @@ const Contacts = () => {
                               message: 'Номер телефона введен некорректно',
                            },
                         })}
-                        className="mb-1 rounded-lg border-2 border-solid border-[#5B41FF] p-3 outline-none"
+                        className={classNames(
+                           'mb-2 rounded-lg border-2 border-solid border-[#5B41FF] p-3 outline-none ',
+                           {
+                              'border-red-700': errors.name,
+                           }
+                        )}
                         type="number"
                         placeholder="+7 (999) 999-99-99"
                      />
-                     <p className=" text-red-700">
-                        {errors.phoneNumber?.message}
-                     </p>
 
+                     <p className=" text-red-700">{errors.comment?.message}</p>
                      <textarea
                         {...register('comment', {
                            required: 'Необходимо ввести текст комментария',
@@ -132,15 +150,18 @@ const Contacts = () => {
                               message: 'Максимальная длина строки: 250',
                            },
                         })}
-                        onKeyPress={commentEnterSubmit}
-                        className="mb-1 rounded-lg border-2 border-solid border-[#5B41FF] p-3 outline-none"
-                        name="content"
-                        id=""
+                        onKeyDown={commentEnterSubmit}
+                        className={classNames(
+                           'mb-2 rounded-lg border-2 border-solid border-[#5B41FF] p-3 outline-none ',
+                           {
+                              'border-red-700': errors.name,
+                           }
+                        )}
+                        name="comment"
                         cols="30"
                         rows="10"
                         placeholder="Комментарий"
                      ></textarea>
-                     <p className=" text-red-700">{errors.comment?.message}</p>
 
                      <button
                         type="submit"
