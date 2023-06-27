@@ -50,7 +50,7 @@ const Calc = () => {
                {mainPageData.calculator.subtitle}
             </p>
 
-            <div className="mx-3 flex flex-col justify-center md:flex-row">
+            <div className="mx-3 mt-16 flex flex-col justify-center md:flex-row">
                <div className="max-w-[650px]">
                   <select
                      className="max-w-[100px]"
@@ -71,13 +71,13 @@ const Calc = () => {
                            <p>{creditPreset.sum}</p>
                         </div>
                         <input
+                           className="w-full"
                            type="range"
                            value={sumTrackbarVal}
                            onChange={(e) => changeSumByTrack(e.target.value)}
                            min="500000"
                            max="30000000"
                         />
-                        {/* <div className="h-4 w-full bg-[#0276FF]"></div> */}
                         <div className="flex justify-between">
                            <p>5 000 000 ₽</p>
                            <p>30 000 000 ₽</p>
@@ -96,7 +96,6 @@ const Calc = () => {
                            min="1"
                            max="60"
                         />
-                        {/* <div className="h-4 w-full bg-[#0276FF]"></div> */}
                         <div className="flex justify-between">
                            <p>1 месяц</p>
                            <p>60 месяцев</p>
@@ -106,32 +105,42 @@ const Calc = () => {
                   </div>
                </div>
 
-               <div className="rounded-xl border-2 border-solid border-[#5B41FF] p-5">
-                  <p>Подберите подходящие вам условия</p>
+               <div className="max-w-[550px] rounded-xl border-2 border-solid border-[#5B41FF] p-5">
+                  <p className="mb-8 text-xl">
+                     Подберите подходящие вам условия
+                  </p>
 
-                  <div>{creditPreset.name}</div>
-                  <div className="flex">
-                     <p className="font-bold">
+                  <p className="text-3xl font-semibold">{creditPreset.name}</p>
+                  <div className="my-12 flex flex-wrap justify-between">
+                     <p className="text-xl font-bold">
                         Cумма -{' '}
                         <span className="text-[#0276FF]">
                            {creditPreset.sum}
                         </span>
                      </p>
-                     <p className="font-bold">
+                     <p className="text-xl font-bold">
                         Срок -{' '}
                         <span className="text-[#0276FF]">
                            {creditPreset.deadline}
                         </span>
                      </p>
                   </div>
-                  <div>
+                  <div className="flex">
                      <div>
-                        <p className="font-bold">{creditPreset.percent}</p>
-                        <p className="text-[#0276FF]">Процентная ставка</p>
+                        <p className="text-3xl font-bold">
+                           {creditPreset.percent}
+                        </p>
+                        <p className="w-40 text-xl text-[#0276FF]">
+                           Процентная ставка
+                        </p>
                      </div>
                      <div>
-                        <p className="font-bold">{creditPreset.payment}</p>
-                        <p className="text-[#0276FF]">Ежемесячный платеж</p>
+                        <p className="text-3xl font-bold">
+                           {creditPreset.payment}
+                        </p>
+                        <p className="w-40 text-xl text-[#0276FF]">
+                           Ежемесячный платеж
+                        </p>
                      </div>
                   </div>
                </div>
