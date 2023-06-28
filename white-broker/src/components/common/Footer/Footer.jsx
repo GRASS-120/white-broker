@@ -4,7 +4,7 @@ import { headerData } from '../../../context/headerData';
 
 const Footer = () => {
    return (
-      <div className="mt-auto w-full  bg-slate-600  p-10 text-white">
+      <div className="mt-auto w-full  bg-slate-600  p-7 text-white">
          <div className="m-auto max-w-[1440px] flex-col justify-around text-xs md:flex-row lg:flex  lg:text-base">
             <div className="max-w-[390px]">
                <div className="semi-bold my-5 text-xl">

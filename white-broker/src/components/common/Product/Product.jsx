@@ -3,7 +3,7 @@ import ProductItem from './ProductItem';
 
 const Product = () => {
    return (
-      <div className=" my-24">
+      <div className=" my-12">
          <div className=" text-center text-4xl font-bold">
             {mainPageData.offers.title}
          </div>

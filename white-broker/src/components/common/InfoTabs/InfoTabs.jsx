@@ -17,7 +17,7 @@ const InfoTabs = () => {
                {contextData.map((item) => (
                   <p
                      className={classNames(
-                        'cursor-pointer p-5 text-xl font-semibold',
+                        'cursor-pointer p-2 lg:p-5 text-xl font-semibold',
                         {
                            'text-[#5B41FF] underline': currentTabId == item.id,
                         }

@@ -6,7 +6,7 @@ const Skills = () => {
         <div className="bg-[#5B41FF]">
             <div className="max-w-[1440px]  justify-center text-white flex flex-wrap m-auto container">
                 <div className="flex  my-7 mx-6 lg:mx-[70px] items-center max-w-xs">
-                    <img className="p-5" src="like.png" alt="" />
+                    <img className="p-5 w-[78px]" src="like.png" alt="" />
                     <div>
                         <div className=" text-xl font-bold ">
                             {mainPageData.description.like.title}
@@ -18,60 +18,60 @@ const Skills = () => {
                 </div>
 
                 <div className="flex my-7 mx-6 lg:mx-[70px] items-center max-w-xs">
-                    <img className="p-5" src="dab.png" alt="" />
+                    <img className="p-5 w-[78px]" src="dab.png" alt="" />
                     <div>
                         <div className=" text-xl font-bold ">
-                            {mainPageData.description.like.title}
+                            {mainPageData.description.confidence.title}
                         </div>
                         <div>
-                        {mainPageData.description.like.subtitle}
+                        {mainPageData.description.confidence.subtitle}
                         </div>
                     </div>
                 </div>
                 <div className="flex my-7 mx-6 lg:mx-[70px] items-center max-w-xs">
-                    <img className="p-5" src="clock.png" alt="" />
-                    <div>
+                    <img className="p-5 w-[78px]" src="clock.png" alt="" />
+                    <div> 
                         <div className=" text-xl font-bold ">
-                            {mainPageData.description.like.title}
+                            {mainPageData.description.time.title}
                         </div>
                         <div>
-                        {mainPageData.description.like.subtitle}
-                        </div>
-                    </div>
-                </div>
-
-                <div className="flex my-7 mx-6 lg:mx-[70px] items-center max-w-xs">
-                    <img className="p-5" src="Shield.png" alt="" />
-                    <div>
-                        <div className=" text-xl font-bold ">
-                            {mainPageData.description.like.title}
-                        </div>
-                        <div>
-                        {mainPageData.description.like.subtitle}
+                        {mainPageData.description.time.subtitle}
                         </div>
                     </div>
                 </div>
 
                 <div className="flex my-7 mx-6 lg:mx-[70px] items-center max-w-xs">
-                    <img className="p-5" src="handshake.png" alt="" />
+                    <img className="p-5 w-[78px]" src="Shield.png" alt="" />
                     <div>
                         <div className=" text-xl font-bold ">
-                            {mainPageData.description.like.title}
+                            {mainPageData.description.safe.title}
                         </div>
                         <div>
-                        {mainPageData.description.like.subtitle}
+                        {mainPageData.description.safe.subtitle}
                         </div>
                     </div>
                 </div>
 
                 <div className="flex my-7 mx-6 lg:mx-[70px] items-center max-w-xs">
-                    <img className="p-5" src="circle-question.png" alt="" />
+                    <img className="p-5 w-[78px]" src="handshake.png" alt="" />
                     <div>
                         <div className=" text-xl font-bold ">
-                            {mainPageData.description.like.title}
+                            {mainPageData.description.trust.title}
                         </div>
                         <div>
-                        {mainPageData.description.like.subtitle}
+                        {mainPageData.description.trust.subtitle}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex my-7 mx-6 lg:mx-[70px] items-center max-w-xs">
+                    <img className="p-5 w-[78px]" src="circle-question.png" alt="" />
+                    <div>
+                        <div className=" text-xl font-bold ">
+                            {mainPageData.description.help.title}
+                        </div>
+                        <div>
+                        {mainPageData.description.help.subtitle}
                         </div>
                     </div>
                 </div>

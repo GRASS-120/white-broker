@@ -1,8 +1,8 @@
 const About = () => {
    return (
-      <div className="m-auto my-10 max-w-[1440px]">
+      <div className="m-auto mt-24 max-w-[1440px]">
          <div className="relative mb-24 mt-7 flex flex-wrap justify-center text-3xl lg:justify-between">
-            <div className="max-w-[650px]">
+            <div className="max-w-[650px] p-2">
                <div className="mb-6 font-bold">
                   Белый брокер рад приветствовать вас на сайте
                </div>
@@ -15,12 +15,12 @@ const About = () => {
             </div>
             <img src="deal.png" alt="" />
             <img
-               className="absolute right-[-40px] top-[-40px]"
+               className="absolute right: 0 md:right-[-40px] top-[-40px]"
                src="Rectangle_45.png"
                alt=""
             />
             <img
-               className="absolute right-[-40px] top-[-40px]"
+               className="absolute right: 0 md:right-[-40px] top-[-40px]"
                src="Rectangle_46.png"
                alt=""
             />
@@ -39,7 +39,7 @@ const About = () => {
                alt=""
             />
          </div>
-         <div className="mb-24 flex flex-wrap justify-center text-3xl lg:justify-between">
+         <div className="mb-24 flex flex-wrap justify-center text-3xl lg:justify-between p-2">
             <div className="mb-6 max-w-[650px]">
                Мы создаём комфортные условия ведения бизнеса нашим клиентам и
                партнерам, используем индивидуальный подход и предлагаем наиболее
@@ -70,7 +70,7 @@ const About = () => {
             </div>
          </div>
 
-         <button className="ml-3 rounded-xl bg-[#5B41FF] p-6 text-3xl text-white transition-all hover:brightness-125">
+         <button className="ml-3 mb-16 rounded-xl bg-[#5B41FF] p-6 text-3xl text-white transition-all hover:brightness-125">
             ОСТАВИТЬ ЗАЯВКУ
          </button>
       </div>
