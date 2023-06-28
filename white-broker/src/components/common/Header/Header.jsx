@@ -8,15 +8,16 @@ import Button from '../../ui/Button';
 const Header = () => {
    let [open, setOpen] = useState(false);
    return (
-      <div className="relative my-5 h-9 md:h-24 ">
-         <div className="container m-auto flex max-w-[1440px] items-center justify-between ">
+      <div className="fixed py-1 h-16 lg:h-24  w-full z-20 bg-white">
+         
+         <div className=" p-2 container  m-auto flex max-w-[1440px] items-center justify-between ">
             <div className="">
-               <div className="text text-xl md:text-4xl">
+               <div className="text text-xl md:text-4xl mx-4 md:mx-0">
                   {headerData.title}
                </div>
                <nav
-                  className={`' absolute z-10 mt-5  flex w-screen flex-col justify-between bg-white py-4 pl-7 transition-all md:static   md:z-auto md:w-auto md:flex-row  md:flex-wrap md:items-center md:py-0 md:pl-0 md:opacity-100 lg:flex-nowrap  ${
-                     open ? 'left-0' : '-left-[1000px]'
+                  className={`' absolute  z-50  flex w-screen flex-col justify-between bg-white py-4 transition-all lg:static pl-7  lg:z-50 lg:w-auto lg:flex-row  lg:flex-wrap lg:items-center lg:py-0 lg:pl-0 lg:opacity-100   ${
+                     open ? 'left-0' : 'left-[-1000px]'
                   }`}
                >
                   {headerData.navbar.map((item, id) => (
@@ -36,11 +37,15 @@ const Header = () => {
                         {item.text}
                      </NavLink>
                   ))}
+                  
+                         {/* Меню на мобилках */}
+                  <div className="items-center z-40 text-xl lg:hidden lg:text-3xl ">
+                     <div className='flex'>
+                        <img className="m-1" src="telegram-b.png" alt="" />
+                        <img className="m-1" src="whatsapp-b.png" alt="" />
+                     </div>
 
-                  <div className="items-center  text-xl md:hidden lg:text-3xl ">
-                     <img className="m-1" src="telegram-b.png" alt="" />
-                     <img className="m-1" src="whatsapp-b.png" alt="" />
-                     {headerData.phoneNumber}
+                     <p className='my-3'>{headerData.phoneNumber}</p>
                      <div className=" mx-0  my-1 text-xs lg:text-xl">
                         <Button children={'ЗАКАЗАТЬ ЗВОНОК'}></Button>
                      </div>
@@ -48,10 +53,11 @@ const Header = () => {
                </nav>
             </div>
 
-            <div className="hidden  items-center text-xl md:flex lg:text-4xl ">
-               <img className="m-1" src="telegram-b.png" alt="" />
-               <img className="m-1" src="whatsapp-b.png" alt="" />
-               <div className="hidden text-3xl lg:block">
+                        {/* Меню на десктоп */}
+            <div className="hidden z-40 items-center text-xl lg:flex lg:text-4xl">
+                  <img className="m-1" src="telegram-b.png" alt="" />
+                  <img className="m-1" src="whatsapp-b.png" alt="" />
+               <div className="hidden text-3xl xl:block">
                   {headerData.phoneNumber}
                </div>
                <div className=" mx-5 text-xl">
@@ -59,16 +65,20 @@ const Header = () => {
                </div>
             </div>
             <button
-               className="mx-2 block cursor-pointer text-3xl md:hidden"
-               name={open ? 'close' : 'menu'}
-               onClick={() => setOpen(!open)}
+               
+               className="mt-2 mx-4 block cursor-pointer text-3xl lg:hidden "
+               name={open ? 'close ' : 'menu'}
+               onClick={() => setOpen(!open)
+               }
             >
-               <ion-icon name={open ? 'close' : 'menu'}></ion-icon>
+               <ion-icon  name={open ? 'close' : 'menu'}></ion-icon>
             </button>
          </div>
 
-         <div className="absolute -bottom-5 h-1 w-full bg-[#D9D9D9]"></div>
+         <div className="absolute -bottom-1 h-1 w-full bg-[#D9D9D9]"></div>
+         <div className={`'absolute w-screen h-[10000px] lg:hidden bg-black opacity-40 z-10' ${ open ? 'block' : 'hidden'}  `}></div>
       </div>
+      
    );
 };
 
