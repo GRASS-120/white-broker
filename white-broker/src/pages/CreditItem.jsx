@@ -32,7 +32,7 @@ const CreditItem = () => {
    };
 
    return (
-      <div>
+      <div className='mt-12 md:mt-16'>
          <div className="m-auto my-10 max-w-[1440px] text-white">
             <div className="rounded-xl bg-gradient-to-tr from-[#BD00FF] to-[#0276FF] p-8">
                <div className="mb-3">
@@ -44,8 +44,8 @@ const CreditItem = () => {
                      <li>Решение от 3-х дней</li>
                   </div>
                </div>
-               <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-between">
-                  <div className="flex flex-col lg:max-w-2xl">
+               <div className="flex flex-col justify-center lg:flex-row lg:justify-between">
+                  <div className="flex flex-col lg:max-w-2xl mr-6">
                      <div>
                         <p className="mb-5">
                            Нужен кредит для развития бизнеса? Возьмите через
@@ -158,12 +158,14 @@ const CreditItem = () => {
                      </form>
                   </div>
                   <div>
+                     
+                  </div>
                      <img
                         className="hidden lg:block"
                         src="meeting.png"
                         alt=""
                      />
-                  </div>
+                  
                </div>
             </div>
          </div>

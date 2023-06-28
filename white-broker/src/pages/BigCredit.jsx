@@ -9,7 +9,7 @@ import Context from '../context/context';
 const BigCredit = () => {
    const data = useContext(Context);
    return (
-      <div>
+      <div className='mt-16 lg:mt-24'>
          <div className="bg-gradient-to-tr from-[#BD00FF] to-[#0276FF]">
             <div className="m-auto max-w-[1440px] ">
                <div className="mx-4 flex items-end justify-center">

@@ -40,7 +40,7 @@ const Contacts = () => {
    };
 
    return (
-      <div>
+      <div className='mt-24'>
          <div className="m-auto max-w-[1440px]">
             <div className="my-10">
                <div className=" text-4xl font-bold">

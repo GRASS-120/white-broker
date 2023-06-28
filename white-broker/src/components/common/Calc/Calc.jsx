@@ -51,9 +51,9 @@ const Calc = () => {
             </p>
 
             <div className="mx-3 mt-16 flex flex-col justify-center md:flex-row">
-               <div className="max-w-[650px]">
+               <div className="max-w-[650px] mr-6 mb-6">
                   <select
-                     className="max-w-[100px]"
+                     className="max-w-[260px] cursor-pointer sm:max-w-[600px] border border-solid border-black rounded-lg p-1 mb-7"
                      onChange={(e) => changeSelectOpt(e.target.value)}
                   >
                      {mainPageData.calculator.creditPresets.map(
@@ -65,39 +65,40 @@ const Calc = () => {
                      )}
                   </select>
                   <div>
-                     <div>
+                     <div className=' mb-7'>
                         <div className="flex justify-between">
                            <p>Сумма кредита</p>
                            <p>{creditPreset.sum}</p>
                         </div>
                         <input
-                           className="w-full"
+                           className="w-full cursor-pointer my-2"
                            type="range"
                            value={sumTrackbarVal}
                            onChange={(e) => changeSumByTrack(e.target.value)}
                            min="500000"
                            max="30000000"
                         />
-                        <div className="flex justify-between">
-                           <p>5 000 000 ₽</p>
-                           <p>30 000 000 ₽</p>
+                        <div className="flex justify-between text-sm">
+                           <p className='text-[#0276FF]'>5 000 000 ₽</p>
+                           <p className=''>30 000 000 ₽</p>
                         </div>
                      </div>
 
-                     <div>
+                     <div className='mb-5'>
                         <div className="flex justify-between">
                            <p>Срок</p>
                            <p>{creditPreset.deadline}</p>
                         </div>
                         <input
+                           className='w-full cursor-pointer my-2'
                            type="range"
                            value={monthTrackbarVal}
                            onChange={(e) => changeMonthByTrack(e.target.value)}
                            min="1"
                            max="60"
                         />
-                        <div className="flex justify-between">
-                           <p>1 месяц</p>
+                        <div className="flex justify-between text-sm">
+                           <p className='text-[#0276FF]'>1 месяц</p>
                            <p>60 месяцев</p>
                         </div>
                      </div>
@@ -105,14 +106,14 @@ const Calc = () => {
                   </div>
                </div>
 
-               <div className="max-w-[550px] rounded-xl border-2 border-solid border-[#5B41FF] p-5">
+               <div className=" rounded-xl border-2 border-solid border-[#5B41FF] p-5 mt-0 lg:w-[500px]">
                   <p className="mb-8 text-xl">
                      Подберите подходящие вам условия
                   </p>
 
                   <p className="text-3xl font-semibold">{creditPreset.name}</p>
                   <div className="my-12 flex flex-wrap justify-between">
-                     <p className="text-xl font-bold">
+                     <p className="text-xl font-bold mr-3">
                         Cумма -{' '}
                         <span className="text-[#0276FF]">
                            {creditPreset.sum}
@@ -125,7 +126,7 @@ const Calc = () => {
                         </span>
                      </p>
                   </div>
-                  <div className="flex">
+                  <div className="flex  justify-center flex-col sm:flex-row">
                      <div>
                         <p className="text-3xl font-bold">
                            {creditPreset.percent}
@@ -149,5 +150,13 @@ const Calc = () => {
       </div>
    );
 };
+
+for (let e of document.querySelectorAll('input[type="range"]')) {
+   e.style.setProperty('--value', e.value);
+   e.style.setProperty('--min', e.min == '' ? '0' : e.min);
+   e.style.setProperty('--max', e.max == '' ? '100' : e.max);
+   e.addEventListener('input', () => e.style.setProperty('--value', e.value));
+ }
+
 
 export default Calc;

@@ -7,14 +7,14 @@ import { register } from 'swiper/element/bundle';
 import Calc from '../components/common/Calc/Calc';
 import Product from '../components/common/Product/Product';
 import Story from '../components/common/Story/Story';
-import Skills from '../components/common/skills/Skills';
+import Skills from '../components/common/Skills/Skills';
 // register Swiper custom elements
 register();
 
 const MainPage = () => {
    const { banner } = useContext(Context);
    return (
-      <div>
+      <div className='mt-13 lg:mt-24'>
          <div>
             <swiper-container
                class="swiper-container"
@@ -25,7 +25,7 @@ const MainPage = () => {
                <swiper-slide class="swiper-slide">
                   <span className=' absolute  z-20  h-screen w-screen bg-black opacity-30 content-[""]'></span>
                   <div className="relative z-30 m-auto max-w-[1440px]">
-                     <div className="absolute mx-3 mt-5 max-w-[520px] lg:mt-32">
+                     <div className="absolute mx-3  max-w-[520px] mt-32 ml-6">
                         <Title>{mainPageData.banner.title}</Title>
                         <div className="my-5">
                            {mainPageData.banner.subtitles.map((item, index) => (
@@ -54,7 +54,7 @@ const MainPage = () => {
                <swiper-slide class="swiper-slide">
                   <span className=' absolute  z-20  h-screen w-screen bg-black opacity-30 content-[""]'></span>
                   <div className="relative z-30 m-auto max-w-[1440px]">
-                     <div className="absolute  mt-5 max-w-[520px] lg:mt-32">
+                     <div className="absolute max-w-[520px] mt-32 ml-6">
                         <Title>{mainPageData.banner.title}</Title>
                         <div className="my-5">
                            {mainPageData.banner.subtitles.map((item, index) => (
@@ -79,7 +79,34 @@ const MainPage = () => {
                      alt=""
                   />
                </swiper-slide>
-               <swiper-slide class="swiper-slide">Slide 3</swiper-slide>
+               <swiper-slide class="swiper-slide">
+               <span className=' absolute  z-20  h-screen w-screen bg-black opacity-30 content-[""]'></span>
+                  <div className="relative z-30 m-auto max-w-[1440px]">
+                     <div className="absolute max-w-[520px] mt-32 ml-6">
+                        <Title>{mainPageData.banner.title}</Title>
+                        <div className="my-5">
+                           {mainPageData.banner.subtitles.map((item, index) => (
+                              <p key={'banner_sub_' + index}>{item}</p>
+                           ))}
+                        </div>
+                        <div className="mb-5 flex items-baseline">
+                           От{' '}
+                           <p className="mx-1 text-4xl font-bold">
+                              {mainPageData.banner.percent}
+                           </p>{' '}
+                           годвых
+                        </div>
+                        <button className="rounded-xl bg-[#5B41FF] p-3  transition-all hover:brightness-125">
+                           ОСТАВИТЬ ЗАЯВКУ
+                        </button>
+                     </div>
+                  </div>
+                  <img
+                     className="h-screen object-cover "
+                     src="slide3.jpeg"
+                     alt=""
+                  />
+               </swiper-slide>
             </swiper-container>
 
             {/* в данном случае index как key можно использовать */}
@@ -92,5 +119,6 @@ const MainPage = () => {
       </div>
    );
 };
+
 
 export default MainPage;

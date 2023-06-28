@@ -19,15 +19,14 @@ import CreditItem from './pages/CreditItem';
 export const router = createBrowserRouter([
    {
       path: '/',
-      element: <RouterLayout />,
-      errorElement: (
+      element: (
          <RouterLayout>
-            <ErrorPage />
-         </RouterLayout>
+      </RouterLayout>
+
       ),
       children: [
          {
-            path: '/mainpage',
+            path: '/',
             element: (
                <Context.Provider value={mainPageData}>
                   <MainPage />
@@ -37,7 +36,7 @@ export const router = createBrowserRouter([
          {
             path: '/BigCredit',
             element: (
-               <Context.Provider value={aboutData}>
+               <Context.Provider value={''}>
                   <BigCredit />
                </Context.Provider>
             ),
@@ -45,7 +44,7 @@ export const router = createBrowserRouter([
          {
             path: '/about',
             element: (
-               <Context.Provider>
+               <Context.Provider value={''}>
                   <About />
                </Context.Provider>
             ),
@@ -53,19 +52,28 @@ export const router = createBrowserRouter([
          {
             path: '/contacts',
             element: (
-               <Context.Provider>
+               <Context.Provider value={''}>
                   <Contacts />
                </Context.Provider>
             ),
          },
          {
-            path: '/CreditItem',
+            path: '/CreditItem' ,
             element: (
-               <Context.Provider>
+               <Context.Provider value={''}>
                   <CreditItem />
                </Context.Provider>
             ),
          },
+         {
+            path: '/error',
+            element: <RouterLayout />,
+            errorElement: (
+               <RouterLayout>
+                  <ErrorPage />
+               </RouterLayout>
+            ),
+         }
       ],
    },
 ]);
