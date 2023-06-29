@@ -23,16 +23,16 @@ const CreditItem = () => {
    }, [isSubmitSuccessful]);
 
    const submit = (data) => {
-      console.log(data);
+      //console.log(data);
       setIsSubmitSuccessful(true);
    };
 
    const errorHandler = (e) => {
-      console.log(e);
+      //console.log(e);
    };
 
    return (
-      <div className='mt-12 md:mt-16'>
+      <div className="mt-12 md:mt-16">
          <div className="m-auto my-10 max-w-[1440px] text-white">
             <div className="rounded-xl bg-gradient-to-tr from-[#BD00FF] to-[#0276FF] p-8">
                <div className="mb-3">
@@ -45,7 +45,7 @@ const CreditItem = () => {
                   </div>
                </div>
                <div className="flex flex-col justify-center lg:flex-row lg:justify-between">
-                  <div className="flex flex-col lg:max-w-2xl mr-6">
+                  <div className="mr-6 flex flex-col lg:max-w-2xl">
                      <div>
                         <p className="mb-5">
                            Нужен кредит для развития бизнеса? Возьмите через
@@ -157,15 +157,8 @@ const CreditItem = () => {
                         </label>
                      </form>
                   </div>
-                  <div>
-                     
-                  </div>
-                     <img
-                        className="hidden lg:block"
-                        src="meeting.png"
-                        alt=""
-                     />
-                  
+                  <div></div>
+                  <img className="hidden lg:block" src="meeting.png" alt="" />
                </div>
             </div>
          </div>

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import Modal from '../ModalForm/Modal';
+import ModalForm from '../ModalForm/ModalForm';
 
 const ContactsForm = () => {
    const [isOpened, setIsOpened] = useState(false);
@@ -42,9 +43,16 @@ const ContactsForm = () => {
 
    return (
       <div className="mr-2">
-         <Modal isOpened={isOpened} onClose={() => setIsOpened(true)}>
-            modal
+         <Modal isOpened={isOpened} onClose={() => setIsOpened(false)}>
+            {/* <p>modal window</p> */}
+            <ModalForm />
          </Modal>
+         <button
+            onClick={() => setIsOpened(true)}
+            className="rounded-xl bg-[#5B41FF] p-3 text-white transition-all hover:brightness-125"
+         >
+            generate cringe
+         </button>
          <div className=" mb-1 text-2xl">Форма обратной связи</div>
          <p className="mb-3">
             Вы можете оставить ваши данные и интересующий вас вопрос
@@ -127,7 +135,6 @@ const ContactsForm = () => {
             ></textarea>
 
             <button
-               onClick={() => setIsOpened(true)}
                type="submit"
                className="rounded-xl bg-[#5B41FF] p-3 text-white transition-all hover:brightness-125"
             >
