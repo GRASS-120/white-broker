@@ -27,7 +27,7 @@ const Help = () => {
    };
 
    return (
-      <div className="m-auto my-28 max-w-[1440px]">
+      <div className="m-auto mt-3 mb-14 max-w-[1440px]">
          <div className=" rounded-xl p-10 shadow-lg">
             <div className=" mb-3 text-3xl font-semibold">Нужна помощь ? </div>
             <div className="mb-8 max-w-[900px]">
