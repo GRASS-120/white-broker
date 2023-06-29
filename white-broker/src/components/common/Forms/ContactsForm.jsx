@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import Modal from '../ModalForm/Modal';
-import ModalForm from '../ModalForm/ModalForm';
 
 const ContactsForm = () => {
    const [isOpened, setIsOpened] = useState(false);
@@ -42,10 +41,9 @@ const ContactsForm = () => {
    };
 
    return (
-      <div className="mr-2">
-         <Modal isOpened={isOpened} onClose={() => setIsOpened(false)}>
-            {/* <p>modal window</p> */}
-            <ModalForm />
+      <div className="m-6">
+         <Modal isOpened={isOpened} onClose={() => setIsOpened(true)}>
+            modal
          </Modal>
          <button
             onClick={() => setIsOpened(true)}

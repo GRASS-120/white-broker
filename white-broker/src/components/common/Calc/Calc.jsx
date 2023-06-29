@@ -50,10 +50,10 @@ const Calc = () => {
                {mainPageData.calculator.subtitle}
             </p>
 
-            <div className="mx-3 mt-16 flex flex-col justify-center md:flex-row">
-               <div className="max-w-[650px] mr-6 mb-6">
+            <div className="mx-3 mt-16 flex flex-col-reverse justify-center md:flex-row">
+               <div className="max-w-[650px] mr-3 lg:mr-6 mb-6">
                   <select
-                     className="max-w-[260px] cursor-pointer sm:max-w-[600px] border border-solid border-black rounded-lg p-1 mb-7"
+                     className="max-w-[260px] cursor-pointer sm:max-w-[600px] border border-solid border-black rounded-lg p-1 mb-4 md:mb-7"
                      onChange={(e) => changeSelectOpt(e.target.value)}
                   >
                      {mainPageData.calculator.creditPresets.map(
@@ -106,40 +106,40 @@ const Calc = () => {
                   </div>
                </div>
 
-               <div className=" rounded-xl border-2 border-solid border-[#5B41FF] p-5 mt-0 lg:w-[500px]">
-                  <p className="mb-8 text-xl">
+               <div className=" rounded-xl border-2 border-solid border-[#5B41FF] p-5 mt-0 mb-6 lg:w-[500px]">
+                  <p className="mb-4 text-xs ">
                      Подберите подходящие вам условия
                   </p>
 
                   <p className="text-3xl font-semibold">{creditPreset.name}</p>
-                  <div className="my-12 flex flex-wrap justify-between">
-                     <p className="text-xl font-bold mr-3">
+                  <div className="my-6 md:my-12 flex flex-wrap justify-between">
+                     <p className=" text-lg font-bold mr-3">
                         Cумма -{' '}
                         <span className="text-[#0276FF]">
                            {creditPreset.sum}
                         </span>
                      </p>
-                     <p className="text-xl font-bold">
+                     <p className="text-lg font-bold">
                         Срок -{' '}
                         <span className="text-[#0276FF]">
                            {creditPreset.deadline}
                         </span>
                      </p>
                   </div>
-                  <div className="flex  justify-center flex-col sm:flex-row">
+                  <div className="flex  justify-center sm:flex-row">
                      <div>
-                        <p className="text-3xl font-bold">
+                        <p className="text-2xl md:text-3xl font-bold">
                            {creditPreset.percent}
                         </p>
-                        <p className="w-40 text-xl text-[#0276FF]">
+                        <p className="w-40 text-xs md:text-xl text-[#0276FF]">
                            Процентная ставка
                         </p>
                      </div>
                      <div>
-                        <p className="text-3xl font-bold">
+                        <p className=" text-2xl md:text-3xl font-bold">
                            {creditPreset.payment}
                         </p>
-                        <p className="w-40 text-xl text-[#0276FF]">
+                        <p className="w-40 text-xs md:text-xl text-[#0276FF]">
                            Ежемесячный платеж
                         </p>
                      </div>
