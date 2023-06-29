@@ -1,15 +1,23 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+
 import Catalog from '../components/common/Catalog/Catalog';
 import Help from '../components/common/Help/Help';
 import InfoTabs from '../components/common/InfoTabs/InfoTabs';
+import Modal from '../components/common/ModalForm/Modal';
+import ModalForm from '../components/common/ModalForm/ModalForm';
 import PurpleBlocks from '../components/common/PurpleBlocks/PurpleBlocks';
 import SkillsDark from '../components/common/Skills/SkillsDark';
 import Context from '../context/context';
 
 const BigCredit = () => {
    const data = useContext(Context);
+   const [isOpened, setIsOpened] = useState(false);
+
    return (
-      <div className='mt-16 lg:mt-24'>
+      <div className="mt-16 lg:mt-24">
+         <Modal isOpened={isOpened} onClose={() => setIsOpened(false)}>
+            <ModalForm setIsOpened={setIsOpened} />
+         </Modal>
          <div className="bg-gradient-to-tr from-[#BD00FF] from-10% via-[#0685f5] via-100% to-[#0276FF] to-40%">
             <div className="m-auto max-w-[1440px] ">
                <div className="mx-4 flex items-center justify-center">
@@ -54,14 +62,17 @@ const BigCredit = () => {
                            </div>
                         </div>
 
-                        <button className="rounded-lg bg-[#5B41FF] p-2 text-white">
+                        <button
+                           onClick={() => setIsOpened(true)}
+                           className="rounded-lg bg-[#5B41FF] p-2 text-white"
+                        >
                            ОСТАВИТЬ ЗАЯВКУ
                         </button>
                      </div>
                   </div>
                   <div>
                      <img
-                        className="hidden max-h-[455px] rounded-xl ml-6 lg:block"
+                        className="ml-6 hidden max-h-[455px] rounded-xl lg:block"
                         src="CreditImg.jpg"
                         alt=""
                      />

@@ -1,7 +1,17 @@
+import { useState } from 'react';
+
+import Modal from '../components/common/ModalForm/Modal';
+import ModalForm from '../components/common/ModalForm/ModalForm';
+
 const About = () => {
+   const [isOpened, setIsOpened] = useState(false);
+
    return (
       <div className="m-auto mt-24 max-w-[1440px] font-semibold tracking-wide">
-         <div className="relative mb-24 mt-7 flex flex-wrap justify-center text-3xl lg:justify-between mx-3">
+         <Modal isOpened={isOpened} onClose={() => setIsOpened(false)}>
+            <ModalForm setIsOpened={setIsOpened} />
+         </Modal>
+         <div className="relative mx-3 mb-24 mt-7 flex flex-wrap justify-center text-3xl lg:justify-between">
             <div className="max-w-[500px] p-2">
                <div className="mb-6 font-bold">
                   Белый брокер рад приветствовать вас на сайте
@@ -15,22 +25,29 @@ const About = () => {
             </div>
             <img className="rounded-xl" src="deal.png" alt="" />
             <img
-               className="absolute hidden md:right-[-40px] top-[-40px]"
+               className="absolute top-[-40px] hidden md:right-[-40px]"
                src="Rectangle_45.png"
                alt=""
             />
             <img
-               className="absolute hidden md:right-[-40px] top-[-40px]"
+               className="absolute top-[-40px] hidden md:right-[-40px]"
                src="Rectangle_46.png"
                alt=""
             />
          </div>
          <div className="relative mb-24 flex flex-wrap justify-center text-2xl lg:justify-between">
-            <img className="hidden lg:block rounded-xl " src="success.png" alt="" />
-            <div className="max-w-[500px] lg:max-w-[500px] ml-6 ">
+            <img
+               className="hidden rounded-xl lg:block "
+               src="success.png"
+               alt=""
+            />
+            <div className="ml-6 max-w-[500px] lg:max-w-[500px] ">
                <p className="font-bold">Наши основные направления: </p>
-               <ul className="list-disc ml-6 mt-4">
-                  <li className="mb-3"> содействие в получении кредита на бизнес</li>
+               <ul className="ml-6 mt-4 list-disc">
+                  <li className="mb-3">
+                     {' '}
+                     содействие в получении кредита на бизнес
+                  </li>
                   <li className="mb-3">кредита под госконтракт</li>
                   <li className="mb-3">кредита под залог недвижимости</li>
                   <li className="mb-3">потребительского кредита</li>
@@ -45,7 +62,7 @@ const About = () => {
                alt=""
             />
          </div>
-         <div className="mb-24 flex flex-wrap justify-center text-2xl lg:justify-between p-2">
+         <div className="mb-24 flex flex-wrap justify-center p-2 text-2xl lg:justify-between">
             <div className="mb-6 max-w-[500px]">
                Мы создаём комфортные условия ведения бизнеса нашим клиентам и
                партнерам, используем индивидуальный подход и предлагаем наиболее
@@ -76,7 +93,10 @@ const About = () => {
             </div>
          </div>
 
-         <button className="ml-3 mb-16 rounded-xl bg-[#5B41FF] p-6 text-3xl text-white transition-all hover:brightness-125">
+         <button
+            onClick={() => setIsOpened(true)}
+            className="mb-16 ml-3 rounded-xl bg-[#5B41FF] p-6 text-3xl text-white transition-all hover:brightness-125"
+         >
             ОСТАВИТЬ ЗАЯВКУ
          </button>
       </div>

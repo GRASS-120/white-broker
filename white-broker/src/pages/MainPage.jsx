@@ -1,20 +1,26 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import Title from '../components/ui/Title';
 import Context from '../context/context';
 import { mainPageData } from '../context/mainPageData';
 
 import { register } from 'swiper/element/bundle';
 import Calc from '../components/common/Calc/Calc';
+import Modal from '../components/common/ModalForm/Modal';
+import ModalForm from '../components/common/ModalForm/ModalForm';
 import Product from '../components/common/Product/Product';
-import Story from '../components/common/Story/Story';
 import Skills from '../components/common/Skills/Skills';
+import Story from '../components/common/Story/Story';
 // register Swiper custom elements
 register();
 
 const MainPage = () => {
    const { banner } = useContext(Context);
+   const [isOpened, setIsOpened] = useState(false);
    return (
-      <div className='mt-13 lg:mt-24'>
+      <div className="mt-13 lg:mt-24">
+         <Modal isOpened={isOpened} onClose={() => setIsOpened(false)}>
+            <ModalForm setIsOpened={setIsOpened} />
+         </Modal>
          <div>
             <swiper-container
                class="swiper-container"
@@ -25,7 +31,7 @@ const MainPage = () => {
                <swiper-slide class="swiper-slide">
                   <span className=' absolute  z-20  h-screen w-screen bg-black opacity-30 content-[""]'></span>
                   <div className="relative z-30 m-auto max-w-[1440px]">
-                     <div className="absolute mx-3  max-w-[520px] mt-32 ml-6">
+                     <div className="absolute mx-3  ml-6 mt-32 max-w-[520px]">
                         <Title>{mainPageData.banner.title}</Title>
                         <div className="my-5">
                            {mainPageData.banner.subtitles.map((item, index) => (
@@ -39,7 +45,10 @@ const MainPage = () => {
                            </p>{' '}
                            годвых
                         </div>
-                        <button className="rounded-xl bg-[#5B41FF] p-3 transition-all hover:brightness-125">
+                        <button
+                           onClick={() => setIsOpened(true)}
+                           className="rounded-xl bg-[#5B41FF] p-3 transition-all hover:brightness-125"
+                        >
                            ОСТАВИТЬ ЗАЯВКУ
                         </button>
                      </div>
@@ -54,7 +63,7 @@ const MainPage = () => {
                <swiper-slide class="swiper-slide">
                   <span className=' absolute  z-20  h-screen w-screen bg-black opacity-30 content-[""]'></span>
                   <div className="relative z-30 m-auto max-w-[1440px]">
-                     <div className="absolute max-w-[520px] mt-32 ml-6">
+                     <div className="absolute ml-6 mt-32 max-w-[520px]">
                         <Title>{mainPageData.banner.title}</Title>
                         <div className="my-5">
                            {mainPageData.banner.subtitles.map((item, index) => (
@@ -68,7 +77,10 @@ const MainPage = () => {
                            </p>{' '}
                            годвых
                         </div>
-                        <button className="rounded-xl bg-[#5B41FF] p-3  transition-all hover:brightness-125">
+                        <button
+                           onClick={() => setIsOpened(true)}
+                           className="rounded-xl bg-[#5B41FF] p-3  transition-all hover:brightness-125"
+                        >
                            ОСТАВИТЬ ЗАЯВКУ
                         </button>
                      </div>
@@ -80,9 +92,9 @@ const MainPage = () => {
                   />
                </swiper-slide>
                <swiper-slide class="swiper-slide">
-               <span className=' absolute  z-20  h-screen w-screen bg-black opacity-30 content-[""]'></span>
+                  <span className=' absolute  z-20  h-screen w-screen bg-black opacity-30 content-[""]'></span>
                   <div className="relative z-30 m-auto max-w-[1440px]">
-                     <div className="absolute max-w-[520px] mt-32 ml-6">
+                     <div className="absolute ml-6 mt-32 max-w-[520px]">
                         <Title>{mainPageData.banner.title}</Title>
                         <div className="my-5">
                            {mainPageData.banner.subtitles.map((item, index) => (
@@ -96,7 +108,10 @@ const MainPage = () => {
                            </p>{' '}
                            годвых
                         </div>
-                        <button className="rounded-xl bg-[#5B41FF] p-3  transition-all hover:brightness-125">
+                        <button
+                           onClick={() => setIsOpened(true)}
+                           className="rounded-xl bg-[#5B41FF] p-3  transition-all hover:brightness-125"
+                        >
                            ОСТАВИТЬ ЗАЯВКУ
                         </button>
                      </div>
@@ -119,6 +134,5 @@ const MainPage = () => {
       </div>
    );
 };
-
 
 export default MainPage;

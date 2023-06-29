@@ -2,10 +2,8 @@ import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-import Modal from '../ModalForm/Modal';
-
 const ContactsForm = () => {
-   const [isOpened, setIsOpened] = useState(false);
+   //const [isOpened, setIsOpened] = useState(false);
    const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
 
    const {
@@ -42,15 +40,6 @@ const ContactsForm = () => {
 
    return (
       <div className="m-6">
-         <Modal isOpened={isOpened} onClose={() => setIsOpened(true)}>
-            modal
-         </Modal>
-         <button
-            onClick={() => setIsOpened(true)}
-            className="rounded-xl bg-[#5B41FF] p-3 text-white transition-all hover:brightness-125"
-         >
-            generate cringe
-         </button>
          <div className=" mb-1 text-2xl">Форма обратной связи</div>
          <p className="mb-3">
             Вы можете оставить ваши данные и интересующий вас вопрос

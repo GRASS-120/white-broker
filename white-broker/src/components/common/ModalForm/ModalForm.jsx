@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-const Form = () => {
+const Form = ({ setIsOpened }) => {
    const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
 
    const {
@@ -21,6 +21,7 @@ const Form = () => {
 
    const submit = (data) => {
       setIsSubmitSuccessful(true);
+      setIsOpened(false);
    };
 
    const errorHandler = (e) => {
