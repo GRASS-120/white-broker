@@ -1,6 +1,6 @@
 const ProductItem = ({ text }) => {
    return (
-      <div className=" relative mx-2 my-6 min-h-[390px] md:max-w-[360px] rounded-xl bg-gradient-to-tr from-[#BD00FF] to-[#0276FF] p-5 text-xs text-white transition-all hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] sm:h-[370px] sm:text-base">
+      <div className=" relative mx-6 my-6 min-h-[340px] md:min-h-[390px] md:max-w-[360px] rounded-xl bg-gradient-to-tr from-[#BD00FF] to-[#0276FF] p-5 text-xs text-white transition-all hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] sm:h-[370px] sm:text-base">
          <div className=" text-base font-bold sm:text-xl">{text.title}</div>
          <div className=" my-5 text-[14px]">{text.text}</div>
          <div>

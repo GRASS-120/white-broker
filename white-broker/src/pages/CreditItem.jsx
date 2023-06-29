@@ -55,7 +55,7 @@ const CreditItem = () => {
                      </div>
                      <form
                         onSubmit={handleSubmit(submit, errorHandler)}
-                        className="flex flex-col rounded-xl bg-white px-10 py-6"
+                        className="flex flex-col rounded-xl bg-white px-4 md:px-10 py-6"
                      >
                         <p className=" text-red-700">{errors.name?.message}</p>
                         <input

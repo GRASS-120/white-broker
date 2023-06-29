@@ -41,7 +41,7 @@ const ContactsForm = () => {
    };
 
    return (
-      <div className="mr-2">
+      <div className="m-6">
          <Modal isOpened={isOpened} onClose={() => setIsOpened(true)}>
             modal
          </Modal>

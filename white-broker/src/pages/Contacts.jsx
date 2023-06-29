@@ -3,7 +3,8 @@ import ContactsForm from '../components/common/Forms/ContactsForm';
 const Contacts = () => {
    return (
       <div className='mt-24'>
-         <div className="m-auto max-w-[1440px]">
+         <div className="m-auto max-w-[1440px] flex flex-col md:flex-row justify-around">
+            <div className='ml-3'>
             <div className="my-10">
                <div className=" text-4xl font-bold">
                   Кредитный <p>Белый Брокер</p>
@@ -41,8 +42,11 @@ const Contacts = () => {
                      </div>
                   </div>
                </div>
-               <ContactsForm />
             </div>
+
+               
+            </div>
+            <ContactsForm />
          </div>
       </div>
    );

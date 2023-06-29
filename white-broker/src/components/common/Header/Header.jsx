@@ -16,7 +16,7 @@ const Header = () => {
                   {headerData.title}
                </div>
                <nav
-                  className={`' absolute  z-50  flex w-screen flex-col justify-between bg-white py-4 transition-all lg:static pl-7  lg:z-50 lg:w-auto lg:flex-row  lg:flex-wrap lg:items-center lg:py-0 lg:pl-0 lg:opacity-100   ${
+                  className={`' absolute rounded-b-xl z-50  flex w-screen flex-col justify-between bg-white py-4 transition-all lg:static pl-7  lg:z-50 lg:w-auto lg:flex-row  lg:flex-wrap lg:items-center lg:py-0 lg:pl-0 lg:opacity-100   ${
                      open ? 'left-0' : 'left-[-1000px]'
                   }`}
                >
@@ -55,8 +55,8 @@ const Header = () => {
 
                         {/* Меню на десктоп */}
             <div className="hidden z-40 items-center text-xl lg:flex lg:text-4xl">
-                  <img className="m-1" src="telegram-b.png" alt="" />
                   <img className="m-1" src="whatsapp-b.png" alt="" />
+                  <img className="m-1 mr-3" src="telegram-b.png" alt="" />
                <div className="hidden text-3xl xl:block">
                   {headerData.phoneNumber}
                </div>

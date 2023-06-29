@@ -10,10 +10,10 @@ const BigCredit = () => {
    const data = useContext(Context);
    return (
       <div className='mt-16 lg:mt-24'>
-         <div className="bg-gradient-to-tr from-[#BD00FF] to-[#0276FF]">
+         <div className="bg-gradient-to-tr from-[#BD00FF] from-10% via-[#0685f5] via-100% to-[#0276FF] to-40%">
             <div className="m-auto max-w-[1440px] ">
-               <div className="mx-4 flex items-end justify-center">
-                  <div className="mb-10 lg:mb-24">
+               <div className="mx-4 flex items-center justify-center">
+                  <div className="mb-10 ">
                      <div className="text-white">
                         <p className=" my-5 text-3xl font-bold">
                            КРЕДИТ ДЛЯ МАЛОГО БИЗНЕСА
@@ -61,8 +61,8 @@ const BigCredit = () => {
                   </div>
                   <div>
                      <img
-                        className="hidden w-[607px] lg:block"
-                        src="Smiling-Business-Man-Standing-PNG-Image.png"
+                        className="hidden max-h-[455px] rounded-xl ml-6 lg:block"
+                        src="CreditImg.jpg"
                         alt=""
                      />
                   </div>
