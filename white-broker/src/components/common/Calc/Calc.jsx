@@ -7,8 +7,12 @@ import {
    sumToString,
 } from '../../../utils/calc';
 import Button from '../../ui/Button';
+import Modal from '../ModalForm/Modal';
+import ModalForm from '../ModalForm/ModalForm';
 
 const Calc = () => {
+   const [isOpened, setIsOpened] = useState(false);
+
    const [creditPreset, setCreditPreset] = useState(
       mainPageData.calculator.creditPresets[0]
    );
@@ -61,6 +65,12 @@ const Calc = () => {
 
    return (
       <div className="my-10">
+         <Modal isOpened={isOpened} onClose={() => setIsOpened(false)}>
+            <ModalForm
+               setIsOpened={setIsOpened}
+               defaultSum={creditPreset.sum_num}
+            />
+         </Modal>
          <div className="m-auto max-w-[1440px]">
             <div className="text-center text-4xl font-bold">
                {mainPageData.calculator.title}
@@ -121,7 +131,9 @@ const Calc = () => {
                            <p>60 месяцев</p>
                         </div>
                      </div>
-                     <Button>ОСТАВИТЬ ЗАЯВКУ</Button>
+                     <Button onClick={() => setIsOpened(true)}>
+                        ОСТАВИТЬ ЗАЯВКУ
+                     </Button>
                   </div>
                </div>
 

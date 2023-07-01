@@ -2,16 +2,22 @@ import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-const Form = ({ setIsOpened }) => {
+const Form = ({ setIsOpened, defaultSum }) => {
    const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
-
    const {
       register,
       handleSubmit,
       reset,
       // resetField - reset поля (хорошо подходит для формы авторизации!)
       formState: { errors },
-   } = useForm();
+   } = useForm({
+      defaultValues: {
+         name: '',
+         phoneNumber: '',
+         sum: defaultSum != undefined && defaultSum,
+         allowPolicy: false,
+      },
+   });
 
    // лучше обнулять форму в useEffect (так в доке написано)
    useEffect(() => {
