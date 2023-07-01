@@ -1,7 +1,11 @@
 import { useState } from 'react';
 
 import { mainPageData } from '../../../context/mainPageData';
-import { monthToString, sumToString } from '../../../utils/calc';
+import {
+   calcMonthPayment,
+   monthToString,
+   sumToString,
+} from '../../../utils/calc';
 import Button from '../../ui/Button';
 
 const Calc = () => {
@@ -19,6 +23,11 @@ const Calc = () => {
       setMonthTrackbarVal(
          mainPageData.calculator.creditPresets[index].deadline_num
       );
+      calcMonthPayment(
+         creditPreset.sum_num,
+         creditPreset.percent,
+         creditPreset.deadline_num
+      );
    };
 
    const changeSumByTrack = (value) => {
@@ -28,6 +37,13 @@ const Calc = () => {
          sum_num: value,
          sum: sumToString(value),
          name: 'Кастомный кредит',
+         payment: sumToString(
+            calcMonthPayment(
+               value,
+               creditPreset.percent,
+               creditPreset.deadline_num
+            )
+         ),
       });
    };
 
@@ -37,6 +53,9 @@ const Calc = () => {
          ...creditPreset,
          deadline_num: value,
          deadline: monthToString(value),
+         payment: sumToString(
+            calcMonthPayment(creditPreset.sum_num, creditPreset.percent, value)
+         ),
       });
    };
 
@@ -51,9 +70,9 @@ const Calc = () => {
             </p>
 
             <div className="mx-3 mt-16 flex flex-col-reverse justify-center md:flex-row">
-               <div className="max-w-[650px] mr-3 lg:mr-6 mb-6">
+               <div className="mb-6 mr-3 max-w-[650px] lg:mr-6">
                   <select
-                     className="max-w-[260px] cursor-pointer sm:max-w-[600px] border border-solid border-black rounded-lg p-1 mb-4 md:mb-7"
+                     className="mb-4 max-w-[260px] cursor-pointer rounded-lg border border-solid border-black p-1 sm:max-w-[600px] md:mb-7"
                      onChange={(e) => changeSelectOpt(e.target.value)}
                   >
                      {mainPageData.calculator.creditPresets.map(
@@ -65,13 +84,13 @@ const Calc = () => {
                      )}
                   </select>
                   <div>
-                     <div className=' mb-7'>
+                     <div className=" mb-7">
                         <div className="flex justify-between">
                            <p>Сумма кредита</p>
                            <p>{creditPreset.sum}</p>
                         </div>
                         <input
-                           className="w-full cursor-pointer my-2"
+                           className="my-2 w-full cursor-pointer"
                            type="range"
                            value={sumTrackbarVal}
                            onChange={(e) => changeSumByTrack(e.target.value)}
@@ -79,18 +98,18 @@ const Calc = () => {
                            max="30000000"
                         />
                         <div className="flex justify-between text-sm">
-                           <p className='text-[#0276FF]'>5 000 000 ₽</p>
-                           <p className=''>30 000 000 ₽</p>
+                           <p className="text-[#0276FF]">5 000 000 ₽</p>
+                           <p className="">30 000 000 ₽</p>
                         </div>
                      </div>
 
-                     <div className='mb-5'>
+                     <div className="mb-5">
                         <div className="flex justify-between">
                            <p>Срок</p>
                            <p>{creditPreset.deadline}</p>
                         </div>
                         <input
-                           className='w-full cursor-pointer my-2'
+                           className="my-2 w-full cursor-pointer"
                            type="range"
                            value={monthTrackbarVal}
                            onChange={(e) => changeMonthByTrack(e.target.value)}
@@ -98,7 +117,7 @@ const Calc = () => {
                            max="60"
                         />
                         <div className="flex justify-between text-sm">
-                           <p className='text-[#0276FF]'>1 месяц</p>
+                           <p className="text-[#0276FF]">1 месяц</p>
                            <p>60 месяцев</p>
                         </div>
                      </div>
@@ -106,14 +125,14 @@ const Calc = () => {
                   </div>
                </div>
 
-               <div className=" rounded-xl border-2 border-solid border-[#5B41FF] p-5 mt-0 mb-6 lg:w-[500px]">
+               <div className=" mb-6 mt-0 rounded-xl border-2 border-solid border-[#5B41FF] p-5 lg:w-[500px]">
                   <p className="mb-4 text-xs ">
                      Подберите подходящие вам условия
                   </p>
 
                   <p className="text-3xl font-semibold">{creditPreset.name}</p>
-                  <div className="my-6 md:my-12 flex flex-wrap justify-between">
-                     <p className=" text-lg font-bold mr-3">
+                  <div className="my-6 flex flex-wrap justify-between md:my-12">
+                     <p className=" mr-3 text-lg font-bold">
                         Cумма -{' '}
                         <span className="text-[#0276FF]">
                            {creditPreset.sum}
@@ -128,18 +147,18 @@ const Calc = () => {
                   </div>
                   <div className="flex  justify-center sm:flex-row">
                      <div>
-                        <p className="text-2xl md:text-3xl font-bold">
+                        <p className="text-2xl font-bold md:text-3xl">
                            {creditPreset.percent}
                         </p>
-                        <p className="w-40 text-xs md:text-xl text-[#0276FF]">
+                        <p className="w-40 text-xs text-[#0276FF] md:text-xl">
                            Процентная ставка
                         </p>
                      </div>
                      <div>
-                        <p className=" text-2xl md:text-3xl font-bold">
+                        <p className=" text-2xl font-bold md:text-3xl">
                            {creditPreset.payment}
                         </p>
-                        <p className="w-40 text-xs md:text-xl text-[#0276FF]">
+                        <p className="w-40 text-xs text-[#0276FF] md:text-xl">
                            Ежемесячный платеж
                         </p>
                      </div>
@@ -156,7 +175,6 @@ for (let e of document.querySelectorAll('input[type="range"]')) {
    e.style.setProperty('--min', e.min == '' ? '0' : e.min);
    e.style.setProperty('--max', e.max == '' ? '100' : e.max);
    e.addEventListener('input', () => e.style.setProperty('--value', e.value));
- }
-
+}
 
 export default Calc;

@@ -48,3 +48,22 @@ export const monthToString = (month) => {
 
    return newMonth;
 };
+
+export const calcMonthPayment = (sum, percent, month) => {
+   const percent_num = Number(percent.split('%')[0]);
+   // console.log(sum, percent_num, month);
+   // const res1 = sum * (percent_num / (1 + percent_num) - month - 1);
+
+   // const res2 =
+   //    sum *
+   //    ((percent_num * (1 + percent_num)) ** month /
+   //       ((1 + percent_num) ** month - 1));
+
+   const res =
+      (((sum * percent_num) / 12) * (1 + percent_num / 12) ** month) /
+      ((1 + percent_num / 12) ** month - 1);
+
+   //console.log(res1, res2, res3);
+
+   return Math.round(res);
+};

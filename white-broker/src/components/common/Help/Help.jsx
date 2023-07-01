@@ -27,13 +27,13 @@ const Help = () => {
    };
 
    return (
-      <div className="m-auto mt-3 mb-14 max-w-[1440px]">
+      <div className="m-auto mb-14 mt-3 max-w-[1440px]">
          <div className=" rounded-xl p-10 shadow-lg">
             <div className=" mb-3 text-3xl font-semibold">Нужна помощь ? </div>
             <div className="mb-8 max-w-[900px]">
-               STOLITSA FINANCE взаимодействуют со многими финансовыми
-               структурами и компаниями: банками, страховыми, оценочными
-               компаниями, агентствами недвижимости
+               БЕЛЫЙ БРОКЕР взаимодействует со многими финансовыми структурами и
+               компаниями: банками, страховыми, оценочными компаниями,
+               агентствами недвижимости
             </div>
             <form
                onSubmit={handleSubmit(submit, errorHandler)}
