@@ -5,8 +5,8 @@ const Skills = () => {
     return (
         <div className="bg-[#5B41FF]">
             <div className="max-w-[1440px]  justify-center text-white flex flex-wrap m-auto container">
-                <div className="flex  my-7 mx-6 lg:mx-[70px] items-center max-w-xs">
-                    <img className="p-5 w-[78px]" src="like.png" alt="" />
+                <div className="flex  my-7 mr-10 lg:mx-[70px] items-center max-w-xs">
+                    <img className="p-4 w-[78px] mr-1" src="like.png" alt="" />
                     <div>
                         <div className=" text-xl font-bold ">
                             {mainPageData.description.like.title}
@@ -17,8 +17,8 @@ const Skills = () => {
                     </div>
                 </div>
 
-                <div className="flex my-7 mx-6 lg:mx-[70px] items-center max-w-xs">
-                    <img className="p-5 w-[78px]" src="dab.png" alt="" />
+                <div className="flex my-7 mr-10 lg:mx-[70px] items-center max-w-xs">
+                    <img className="p-4 w-[78px] mr-1" src="dab.png" alt="" />
                     <div>
                         <div className=" text-xl font-bold ">
                             {mainPageData.description.confidence.title}
@@ -28,8 +28,8 @@ const Skills = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex my-7 mx-6 lg:mx-[70px] items-center max-w-xs">
-                    <img className="p-5 w-[78px]" src="clock.png" alt="" />
+                <div className="flex my-7 mr-10 lg:mx-[70px] items-center max-w-xs">
+                    <img className="p-4 w-[78px] mr-1" src="clock.png" alt="" />
                     <div> 
                         <div className=" text-xl font-bold ">
                             {mainPageData.description.time.title}
@@ -40,8 +40,8 @@ const Skills = () => {
                     </div>
                 </div>
 
-                <div className="flex my-7 mx-6 lg:mx-[70px] items-center max-w-xs">
-                    <img className="p-5 w-[78px]" src="Shield.png" alt="" />
+                <div className="flex my-7 mr-10 lg:mx-[70px] items-center max-w-xs">
+                    <img className="p-4 w-[78px] mr-1" src="Shield.png" alt="" />
                     <div>
                         <div className=" text-xl font-bold ">
                             {mainPageData.description.safe.title}
@@ -52,8 +52,8 @@ const Skills = () => {
                     </div>
                 </div>
 
-                <div className="flex my-7 mx-6 lg:mx-[70px] items-center max-w-xs">
-                    <img className="p-5 w-[78px]" src="handshake.png" alt="" />
+                <div className="flex my-7 mr-10 lg:mx-[70px] items-center max-w-xs">
+                    <img className="p-4 w-[78px] mr-1" src="handshake.png" alt="" />
                     <div>
                         <div className=" text-xl font-bold ">
                             {mainPageData.description.trust.title}
@@ -64,8 +64,8 @@ const Skills = () => {
                     </div>
                 </div>
 
-                <div className="flex my-7 mx-6 lg:mx-[70px] items-center max-w-xs">
-                    <img className="p-5 w-[78px]" src="circle-question.png" alt="" />
+                <div className="flex my-7 mr-10 lg:mx-[70px] items-center max-w-xs">
+                    <img className="p-4 w-[78px] mr-1" src="circle-question.png" alt="" />
                     <div>
                         <div className=" text-xl font-bold ">
                             {mainPageData.description.help.title}

@@ -55,7 +55,7 @@ const MainPage = () => {
                   </div>
                   <img
                      className="h-screen w-screen object-cover"
-                     src="bomj.jpeg"
+                     src="slide_1.jpeg"
                      alt=""
                   />
                </swiper-slide>
@@ -87,7 +87,7 @@ const MainPage = () => {
                   </div>
                   <img
                      className="h-screen object-cover "
-                     src="bomj_2.jpeg"
+                     src="slide_2.jpeg"
                      alt=""
                   />
                </swiper-slide>

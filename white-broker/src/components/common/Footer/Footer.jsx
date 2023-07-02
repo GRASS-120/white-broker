@@ -33,8 +33,8 @@ const Footer = () => {
             <div className="max-w-[390px]">
                <div className="semi-bold my-5 text-xl">Соц. сети</div>
                <div className="flex">
-                  <img className="mr-1" src="telegram.png" alt="" />
-                  <img className="mx-1" src="whatsapp 1.png" alt="" />
+                  <img className="mr-1 w-[50px]" src="telegram-f.png" alt="" />
+                  <img className="mx-1 w-[50px]" src="whatsapp-f.png" alt="" />
                </div>
             </div>
             <div className="max-w-[390px]">
