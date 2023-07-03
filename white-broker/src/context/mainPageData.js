@@ -28,7 +28,7 @@ export const mainPageData = {
       },
       help: {
          title: 'Всегда готовы помочь',
-         subtitle: 'Отвечаем на любые вопросы',
+         subtitle: 'Отвечаем на любые заданные вами вопросы',
       },
    },
    calculator: {

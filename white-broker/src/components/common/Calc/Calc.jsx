@@ -82,12 +82,12 @@ const Calc = () => {
             <div className="mx-3 mt-16 flex flex-col-reverse justify-center md:flex-row">
                <div className="mb-6 mr-3 max-w-[650px] lg:mr-6">
                   <select
-                     className="mb-4 max-w-[260px] cursor-pointer rounded-lg border border-solid border-black p-1 sm:max-w-[600px] md:mb-7"
+                     className="mb-4 max-w-[260px] relative cursor-pointer rounded-lg border border-solid border-black p-1 sm:max-w-[600px] md:mb-7 overflow-hidden"
                      onChange={(e) => changeSelectOpt(e.target.value)}
                   >
                      {mainPageData.calculator.creditPresets.map(
                         (item, index) => (
-                           <option key={'select_opt_' + index} value={index}>
+                           <option key={'select_opt_' + index} className='text-xs md:text-lg rounded-sm' value={index}>
                               {item.name}
                            </option>
                         )
@@ -157,8 +157,8 @@ const Calc = () => {
                         </span>
                      </p>
                   </div>
-                  <div className="flex  justify-center sm:flex-row">
-                     <div>
+                  <div className="flex  justify-center flex-col fold:flex-row">
+                     <div className='max-w-[110px] mr-[20px]'>
                         <p className="text-2xl font-bold md:text-3xl">
                            {creditPreset.percent}
                         </p>
@@ -166,7 +166,7 @@ const Calc = () => {
                            Процентная ставка
                         </p>
                      </div>
-                     <div>
+                     <div className=''>
                         <p className=" text-2xl font-bold md:text-3xl">
                            {creditPreset.payment}
                         </p>

@@ -11,7 +11,7 @@ const InfoTabs = () => {
    const [currentTabId, setCurrentTabId] = useState(0);
 
    return (
-      <div className="mx-3 my-9">
+      <div className="mx-6 my-9">
          <div className="m-auto flex max-w-[1440px] flex-col justify-center md:justify-between">
             <div className="m-auto flex flex-wrap">
                {contextData.map((item) => (

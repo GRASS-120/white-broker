@@ -9,8 +9,8 @@ const Catalog = () => {
                 <p className="mb-2">Сумма: до 300 млн Р</p>
                 <p className="">Сумма: до 300 млн Р</p>
                 <div className="opacity-100 lg:opacity-0 transition-opacity justify-between mt-6 group-hover:opacity-100">
-                    <button className=" text-sm text-white bg-[#5B41FF] p-2 rounded-lg mr-2">ПОЛУЧИТЬ</button>
-                    <button className="  text-sm text-white bg-[#5B41FF] p-2 rounded-lg">ПОЛУЧИТЬ</button>
+                    <button className=" text-sm text-white bg-[#5B41FF] p-2 px-6 rounded-lg mr-2">ПОЛУЧИТЬ</button>
+                    
                 </div>
             </div>
             
@@ -20,8 +20,8 @@ const Catalog = () => {
                 <p className="mb-2">Сумма: до 300 млн Р</p>
                 <p className="">Сумма: до 300 млн Р</p>
                 <div className="opacity-100 lg:opacity-0 transition-opacity justify-between mt-6 group-hover:opacity-100">
-                    <button className=" text-sm text-white bg-[#5B41FF] p-2 rounded-lg mr-2">ПОЛУЧИТЬ</button>
-                    <button className="  text-sm text-white bg-[#5B41FF] p-2 rounded-lg">ПОЛУЧИТЬ</button>
+                    <button className=" text-sm text-white bg-[#5B41FF] p-2 px-6 rounded-lg mr-2">ПОЛУЧИТЬ</button>
+                    
                 </div>
             </div>
 
@@ -31,8 +31,8 @@ const Catalog = () => {
                 <p className="mb-2">Сумма: до 300 млн Р</p>
                 <p className="">Сумма: до 300 млн Р</p>
                 <div className="opacity-100 lg:opacity-0 transition-opacity justify-between mt-6 group-hover:opacity-100">
-                    <button className=" text-sm text-white bg-[#5B41FF] p-2 rounded-lg mr-2">ПОЛУЧИТЬ</button>
-                    <button className="  text-sm text-white bg-[#5B41FF] p-2 rounded-lg">ПОЛУЧИТЬ</button>
+                    <button className=" text-sm text-white bg-[#5B41FF] p-2  px-6 rounded-lg mr-2">ПОЛУЧИТЬ</button>
+                    
                 </div>
             </div>
 
@@ -42,8 +42,8 @@ const Catalog = () => {
                 <p className="mb-2">Сумма: до 300 млн Р</p>
                 <p className="">Сумма: до 300 млн Р</p>
                 <div className="opacity-100 lg:opacity-0 transition-opacity justify-between mt-6 group-hover:opacity-100">
-                    <button className=" text-sm text-white bg-[#5B41FF] p-2 rounded-lg mr-2">ПОЛУЧИТЬ</button>
-                    <button className="  text-sm text-white bg-[#5B41FF] p-2 rounded-lg">ПОЛУЧИТЬ</button>
+                    <button className=" text-sm text-white bg-[#5B41FF] p-2 px-6 rounded-lg mr-2">ПОЛУЧИТЬ</button>
+                    
                 </div>
             </div>
 
@@ -53,8 +53,8 @@ const Catalog = () => {
                 <p className="mb-2">Сумма: до 300 млн Р</p>
                 <p className="">Сумма: до 300 млн Р</p>
                 <div className="opacity-100 lg:opacity-0 transition-opacity justify-between mt-6 group-hover:opacity-100">
-                    <button className=" text-sm text-white bg-[#5B41FF] p-2 rounded-lg mr-2">ПОЛУЧИТЬ</button>
-                    <button className="  text-sm text-white bg-[#5B41FF] p-2 rounded-lg">ПОЛУЧИТЬ</button>
+                    <button className=" text-sm text-white bg-[#5B41FF] p-2 px-6 rounded-lg mr-2">ПОЛУЧИТЬ</button>
+                    
                 </div>
             </div>
             
@@ -64,8 +64,8 @@ const Catalog = () => {
                 <p className="mb-2">Сумма: до 300 млн Р</p>
                 <p className="">Сумма: до 300 млн Р</p>
                 <div className="opacity-100 lg:opacity-0 transition-opacity justify-between mt-6 group-hover:opacity-100">
-                    <button className=" text-sm text-white bg-[#5B41FF] p-2 rounded-lg mr-2">ПОЛУЧИТЬ</button>
-                    <button className="  text-sm text-white bg-[#5B41FF] p-2 rounded-lg">ПОЛУЧИТЬ</button>
+                    <button className=" text-sm text-white bg-[#5B41FF] p-2 px-6 rounded-lg mr-2">ПОЛУЧИТЬ</button>
+                    
                 </div>
             </div>
 
@@ -75,8 +75,8 @@ const Catalog = () => {
                 <p className="mb-2">Сумма: до 300 млн Р</p>
                 <p className="">Сумма: до 300 млн Р</p>
                 <div className="opacity-100 lg:opacity-0 transition-opacity justify-between mt-6 group-hover:opacity-100">
-                    <button className=" text-sm text-white bg-[#5B41FF] p-2 rounded-lg mr-2">ПОЛУЧИТЬ</button>
-                    <button className="  text-sm text-white bg-[#5B41FF] p-2 rounded-lg">ПОЛУЧИТЬ</button>
+                    <button className=" text-sm text-white bg-[#5B41FF] p-2 px-6 rounded-lg mr-2">ПОЛУЧИТЬ</button>
+                    
                 </div>
             </div>
 
@@ -86,8 +86,8 @@ const Catalog = () => {
                 <p className="mb-2">Сумма: до 300 млн Р</p>
                 <p className="">Сумма: до 300 млн Р</p>
                 <div className="opacity-100 lg:opacity-0 transition-opacity justify-between mt-6 group-hover:opacity-100">
-                    <button className=" text-sm text-white bg-[#5B41FF] p-2 rounded-lg mr-2">ПОЛУЧИТЬ</button>
-                    <button className="  text-sm text-white bg-[#5B41FF] p-2 rounded-lg">ПОЛУЧИТЬ</button>
+                    <button className=" text-sm text-white bg-[#5B41FF] p-2 px-6 rounded-lg mr-2">ПОЛУЧИТЬ</button>
+                    
                 </div>
             </div>
 
@@ -97,8 +97,8 @@ const Catalog = () => {
                 <p className="mb-2">Сумма: до 300 млн Р</p>
                 <p className="">Сумма: до 300 млн Р</p>
                 <div className="opacity-100 lg:opacity-0 transition-opacity justify-between mt-6 group-hover:opacity-100">
-                    <button className=" text-sm text-white bg-[#5B41FF] p-2 rounded-lg mr-2">ПОЛУЧИТЬ</button>
-                    <button className="  text-sm text-white bg-[#5B41FF] p-2 rounded-lg">ПОЛУЧИТЬ</button>
+                    <button className=" text-sm text-white bg-[#5B41FF] p-2 px-6 rounded-lg mr-2">ПОЛУЧИТЬ</button>
+                    
                 </div>
             </div>
             
@@ -108,8 +108,8 @@ const Catalog = () => {
                 <p className="mb-2">Сумма: до 300 млн Р</p>
                 <p className="">Сумма: до 300 млн Р</p>
                 <div className="opacity-100 lg:opacity-0 transition-opacity justify-between mt-6 group-hover:opacity-100">
-                    <button className=" text-sm text-white bg-[#5B41FF] p-2 rounded-lg mr-2">ПОЛУЧИТЬ</button>
-                    <button className="  text-sm text-white bg-[#5B41FF] p-2 rounded-lg">ПОЛУЧИТЬ</button>
+                    <button className=" text-sm text-white bg-[#5B41FF] p-2 px-6 rounded-lg mr-2">ПОЛУЧИТЬ</button>
+                    
                 </div>
             </div>
 
@@ -119,8 +119,8 @@ const Catalog = () => {
                 <p className="mb-2">Сумма: до 300 млн Р</p>
                 <p className="">Сумма: до 300 млн Р</p>
                 <div className="opacity-100 lg:opacity-0 transition-opacity justify-between mt-6 group-hover:opacity-100">
-                    <button className=" text-sm text-white bg-[#5B41FF] p-2 rounded-lg mr-2">ПОЛУЧИТЬ</button>
-                    <button className="  text-sm text-white bg-[#5B41FF] p-2 rounded-lg">ПОЛУЧИТЬ</button>
+                    <button className=" text-sm text-white bg-[#5B41FF] p-2 px-6 rounded-lg mr-2">ПОЛУЧИТЬ</button>
+                    
                 </div>
             </div>
 
@@ -130,8 +130,8 @@ const Catalog = () => {
                 <p className="mb-2">Сумма: до 300 млн Р</p>
                 <p className="">Сумма: до 300 млн Р</p>
                 <div className="opacity-100 lg:opacity-0 transition-opacity justify-between mt-6 group-hover:opacity-100">
-                    <button className=" text-sm text-white bg-[#5B41FF] p-2 rounded-lg mr-2">ПОЛУЧИТЬ</button>
-                    <button className="  text-sm text-white bg-[#5B41FF] p-2 rounded-lg">ПОЛУЧИТЬ</button>
+                    <button className=" text-sm text-white bg-[#5B41FF] p-2 px-6 rounded-lg mr-2">ПОЛУЧИТЬ</button>
+                    
                 </div>
             </div>
         </div>
