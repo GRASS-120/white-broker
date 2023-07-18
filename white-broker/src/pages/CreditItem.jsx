@@ -2,11 +2,12 @@ import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
+import Catalog from '../components/common/Catalog/Catalog';
 import Help from '../components/common/Help/Help';
 import InfoTabs from '../components/common/InfoTabs/InfoTabs';
-import Product from '../components/common/Product/Product';
 import PurpleBlocks from '../components/common/PurpleBlocks/PurpleBlocks';
 import SkillsDark from '../components/common/Skills/SkillsDark';
+import { smallCreditData } from '../context/smallCredit';
 
 const CreditItem = () => {
    const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
@@ -167,7 +168,8 @@ const CreditItem = () => {
          <InfoTabs />
          <SkillsDark />
          <Help />
-         <Product />
+         <Catalog data={smallCreditData.credits} />
+         {/* <Product /> */}
       </div>
    );
 };

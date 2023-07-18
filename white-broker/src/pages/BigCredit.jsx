@@ -7,6 +7,7 @@ import Modal from '../components/common/ModalForm/Modal';
 import ModalForm from '../components/common/ModalForm/ModalForm';
 import PurpleBlocks from '../components/common/PurpleBlocks/PurpleBlocks';
 import SkillsDark from '../components/common/Skills/SkillsDark';
+import { bigCreditData } from '../context/bigCredit';
 import Context from '../context/context';
 
 const BigCredit = () => {
@@ -24,7 +25,7 @@ const BigCredit = () => {
                   <div className="mb-10 ">
                      <div className="text-white">
                         <p className=" my-5 text-3xl font-bold">
-                           КРЕДИТ ДЛЯ МАЛОГО БИЗНЕСА
+                           КРЕДИТ КРУПНОМУ БИЗНЕСУ
                         </p>
                         <p className=" mb-5 text-2xl font-semibold">от 1 дня</p>
                         <ul className=" mb-3 ml-9">
@@ -83,7 +84,7 @@ const BigCredit = () => {
 
          <PurpleBlocks />
          <InfoTabs />
-         <Catalog />
+         <Catalog data={bigCreditData.credit} />
          <SkillsDark />
          <Help />
       </div>

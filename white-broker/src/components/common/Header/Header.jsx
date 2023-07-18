@@ -21,7 +21,7 @@ const Header = () => {
                   {headerData.title}
                </div>
                <nav
-                  className={`' absolute z-50 flex text-lg font-semibold lg:font-medium w-screen flex-col justify-between rounded-b-xl bg-white py-4 pl-7 transition-all lg:static  lg:z-50 lg:w-auto lg:flex-row  lg:flex-wrap lg:items-center lg:py-0 lg:pl-0 lg:opacity-100   ${
+                  className={`' absolute z-50 flex w-screen flex-col justify-between rounded-b-xl bg-white py-4 pl-7 text-lg font-semibold transition-all lg:static lg:z-50  lg:w-auto lg:flex-row lg:flex-wrap  lg:items-center lg:py-0 lg:pl-0 lg:font-medium lg:opacity-100   ${
                      open ? 'left-0' : 'left-[-1000px]'
                   }`}
                >
@@ -45,10 +45,10 @@ const Header = () => {
 
                   {/* Меню на мобилках */}
                   <div className="z-40 items-center text-xl lg:hidden lg:text-3xl ">
-                     <div className="flex">
+                     {/* <div className="flex">
                         <img className="m-1 w-[35px]" src="telegram.svg" alt="" />
                         <img className="m-1 w-[35px]" src="whatsapp.svg" alt="" />
-                     </div>
+                     </div> */}
 
                      <p className="my-3">{headerData.phoneNumber}</p>
                      <div className=" mx-0  my-1 text-xs lg:text-xl">
@@ -63,8 +63,8 @@ const Header = () => {
 
             {/* Меню на десктоп */}
             <div className="z-40 hidden items-center text-xl lg:flex lg:text-4xl">
-                  <img className="m-1 w-[35px]" src="telegram.svg" alt="" />
-                  <img className="m-1 w-[35px]" src="whatsapp.svg" alt="" />
+               {/* <img className="m-1 w-[35px]" src="telegram.svg" alt="" />
+               <img className="m-1 w-[35px]" src="whatsapp.svg" alt="" /> */}
                <div className="hidden text-3xl xl:block">
                   {headerData.phoneNumber}
                </div>

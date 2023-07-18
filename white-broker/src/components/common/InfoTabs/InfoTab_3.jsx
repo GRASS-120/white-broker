@@ -1,17 +1,22 @@
+import ListItem from '../../ui/ListItem';
+import OrderedList from '../../ui/OrderedList';
+import Title from '../../ui/Title';
+
 const InfoTab_3 = () => {
    return (
       <div>
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero
-         accusamus animi nobis minus labore reprehenderit. Magnam sequi in
-         aliquam consequatur odio tenetur, expedita iure, nesciunt veritatis,
-         eius doloribus sint similique! Molestias earum incidunt ab commodi
-         quidem? Similique consectetur labore, beatae impedit quibusdam esse
-         saepe iste pariatur doloremque omnis. Earum accusamus aperiam veritatis
-         mollitia inventore nihil sed pariatur debitis obcaecati exercitationem.
-         Rerum culpa quos eligendi cupiditate officiis. Id, aut corrupti
-         inventore quo obcaecati veritatis eum enim cupiditate. Beatae
-         consectetur obcaecati culpa dolor. Qui id laboriosam natus veniam
-         facilis adipisci suscipit fugiat.
+         <Title>Необходимые документы</Title>
+         <OrderedList>
+            <ListItem>Заявка с указанием желаемой суммы кредита</ListItem>
+            <ListItem>
+               Баланс и отчет о финансовых результатах форма 1,2 за( годовой и
+               по квартально текущего года)
+            </ListItem>
+            <ListItem>
+               Для ИП Выписка с расчетного счета за последние 12 месяцев
+            </ListItem>
+            <ListItem>Паспорт собственника</ListItem>
+         </OrderedList>
       </div>
    );
 };
