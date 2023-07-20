@@ -47,7 +47,7 @@ const CreditItem = () => {
                   </div>
                </div>
                <div className="flex flex-col justify-center lg:flex-row lg:justify-between">
-                  <div className="mr-6 flex flex-col lg:max-w-2xl">
+                  <div className="flex flex-col lg:max-w-2xl">
                      <div>
                         <p className="mb-5">
                            Нужен кредит для развития бизнеса? Возьмите через
