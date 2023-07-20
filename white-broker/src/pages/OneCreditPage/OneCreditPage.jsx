@@ -11,33 +11,31 @@ const OneCreditPage = () => {
    const { type, id } = useParams();
    const [currentTabId, setCurrentTabId] = useState(0);
 
+   // ! НИКОГДА НЕ ИСПОЛЬЗУЙ SWITCH-CASE!!! в ситуации с big он не
+   // ! работал например, а просто в if - все норм.... ПОЧЕМУ???
+
    let titles = [];
    let oneTitle = '';
    if (type == 'big') {
       titles = bigCreditData.credit;
-      switch (id) {
-         case 1:
-            oneTitle = titles[2].title;
-            break;
-         case 2:
-            oneTitle = titles[7].title;
-            break;
-         case 3:
-            oneTitle = titles[8].title;
-            break;
-         case 4:
-            oneTitle = titles[9].title;
-            break;
-         case 5:
-            oneTitle = titles[10].title;
-            break;
-         default:
-            break;
+      if (id == 1) {
+         oneTitle = titles[2].title;
+      } else if (id == 2) {
+         oneTitle = titles[7].title;
+      } else if (id == 3) {
+         oneTitle = titles[8].title;
+      } else if (id == 4) {
+         oneTitle = titles[9].title;
+      } else if (id == 5) {
+         oneTitle = titles[10].title;
       }
    } else if (type == 'small') {
       titles = smallCreditData.credits;
       oneTitle = titles[id - 1].title;
    }
+
+   console.log(titles[2].title);
+   console.log(oneTitle);
 
    const Tab0 = lazy(
       async () =>

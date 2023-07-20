@@ -18,11 +18,13 @@ import ScrollToTop from './utils/ScrollToTop';
 // этой проблемы нужно создать родительский роут, который будет отрисовывать общие компоненты (<RouterLayout>) + все
 // то, что будут отрисовывать дочерние роуты (все роутеры приложения) для каждого урла (<Outlet>).
 
+// эти два массива нужны для, так сказать, проверки правильности урла
+// (кредитов 18, следовательно id > 0 and < 19)
 const smallArr = [
-   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
 ];
 
-const bigArr = [1, 2, 3, 4, 5];
+const bigArr = [1, 2, 3, 4, 5, 6];
 
 export const router = createBrowserRouter([
    {
@@ -61,6 +63,9 @@ export const router = createBrowserRouter([
                   return redirect('/error');
                }
                if ((params.type == 'big') & !(params.id in bigArr)) {
+                  return redirect('/error');
+               }
+               if (params.id == 0) {
                   return redirect('/error');
                }
                return null;
@@ -102,6 +107,9 @@ export const router = createBrowserRouter([
                   return redirect('/error');
                }
                if ((params.type == 'small') & !(params.id in smallArr)) {
+                  return redirect('/error');
+               }
+               if (params.id == 0) {
                   return redirect('/error');
                }
                return null;
