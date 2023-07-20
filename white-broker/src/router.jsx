@@ -7,7 +7,7 @@ import About from './pages/About';
 import BigCredit from './pages/BigCredit';
 import Contacts from './pages/Contacts';
 import CreditItem from './pages/CreditItem';
-import ErrorPage from './pages/ErrorPage';
+import ErrorBoundary from './pages/ErrorBoundary';
 import MainPage from './pages/MainPage';
 import OneCreditPage from './pages/OneCreditPage/OneCreditPage';
 import ScrollToTop from './utils/ScrollToTop';
@@ -26,12 +26,24 @@ const smallArr = [
 
 const bigArr = [1, 2, 3, 4, 5, 6];
 
+// function ErrorBoundary() {
+//    let error = useRouteError();
+//    console.error(error);
+//    // Uncaught ReferenceError: path is not defined
+//    return <div>Dang!</div>;
+// }
+
 export const router = createBrowserRouter([
    {
       path: '/',
       element: (
          <RouterLayout>
             <ScrollToTop />
+         </RouterLayout>
+      ),
+      errorElement: (
+         <RouterLayout>
+            <ErrorBoundary />
          </RouterLayout>
       ),
       children: [
@@ -117,12 +129,7 @@ export const router = createBrowserRouter([
          },
          {
             path: '/error',
-            element: <RouterLayout />,
-            errorElement: (
-               <RouterLayout>
-                  <ErrorPage />
-               </RouterLayout>
-            ),
+            element: <ErrorBoundary />,
          },
       ],
    },
