@@ -75,7 +75,7 @@ const Header = () => {
                </div>
             </div>
             <button
-               className="mx-4 mt-2 block cursor-pointer text-3xl lg:hidden "
+               className="mx-4 block cursor-pointer text-3xl lg:hidden w-[50px] h-[40px]"
                name={open ? 'close ' : 'menu'}
                onClick={() => setOpen(!open)}
             >
