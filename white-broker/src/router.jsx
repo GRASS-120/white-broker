@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, redirect } from 'react-router-dom';
 
 import Context from './context/context';
 import { mainPageData } from './context/mainPageData';
@@ -9,6 +9,7 @@ import Contacts from './pages/Contacts';
 import CreditItem from './pages/CreditItem';
 import ErrorPage from './pages/ErrorPage';
 import MainPage from './pages/MainPage';
+import OneCreditPage from './pages/OneCreditPage/OneCreditPage';
 import ScrollToTop from './utils/ScrollToTop';
 
 // Для того, чтобы внутри приложения работали компоненты из react-router-dom, нужно обернуть приложение
@@ -16,6 +17,12 @@ import ScrollToTop from './utils/ScrollToTop';
 // рендерит по заданному урлу => не понятно, как отрисовывать общие компоненты по типу header и footer. Для решения
 // этой проблемы нужно создать родительский роут, который будет отрисовывать общие компоненты (<RouterLayout>) + все
 // то, что будут отрисовывать дочерние роуты (все роутеры приложения) для каждого урла (<Outlet>).
+
+const smallArr = [
+   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+];
+
+const bigArr = [1, 2, 3, 4, 5];
 
 export const router = createBrowserRouter([
    {
@@ -43,6 +50,23 @@ export const router = createBrowserRouter([
             ),
          },
          {
+            path: '/BigCredit/:type/:id',
+            element: (
+               <Context.Provider value={''}>
+                  <OneCreditPage />
+               </Context.Provider>
+            ),
+            loader: async ({ params }) => {
+               if ((params.type != 'small') & (params.type != 'big')) {
+                  return redirect('/error');
+               }
+               if ((params.type == 'big') & !(params.id in bigArr)) {
+                  return redirect('/error');
+               }
+               return null;
+            },
+         },
+         {
             path: '/about',
             element: (
                <Context.Provider value={''}>
@@ -65,6 +89,23 @@ export const router = createBrowserRouter([
                   <CreditItem />
                </Context.Provider>
             ),
+         },
+         {
+            path: '/CreditItem/:type/:id',
+            element: (
+               <Context.Provider value={''}>
+                  <OneCreditPage />
+               </Context.Provider>
+            ),
+            loader: async ({ params }) => {
+               if ((params.type != 'small') & (params.type != 'big')) {
+                  return redirect('/error');
+               }
+               if ((params.type == 'small') & !(params.id in smallArr)) {
+                  return redirect('/error');
+               }
+               return null;
+            },
          },
          {
             path: '/error',

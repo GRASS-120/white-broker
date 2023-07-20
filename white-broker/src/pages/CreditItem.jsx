@@ -168,7 +168,7 @@ const CreditItem = () => {
          <InfoTabs />
          <SkillsDark />
          <Help />
-         <Catalog data={smallCreditData.credits} />
+         <Catalog data={smallCreditData.credits} type={'small'} />
          {/* <Product /> */}
       </div>
    );

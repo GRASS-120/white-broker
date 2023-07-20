@@ -1,9 +1,18 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import Modal from '../ModalForm/Modal';
 import ModalForm from '../ModalForm/ModalForm.jsx';
 
-const Catalog = ({ data }) => {
+const Catalog = ({ data, type }) => {
    const [isOpened, setIsOpened] = useState(false);
+
+   let slug = '';
+   if (type == 'big') {
+      slug = 'BigCredit';
+   } else if (type == 'small') {
+      slug = 'CreditItem';
+   }
+
    return (
       <div className="m-auto flex max-w-[1440px] flex-wrap justify-around">
          <Modal isOpened={isOpened} onClose={() => setIsOpened(false)}>
@@ -27,7 +36,9 @@ const Catalog = ({ data }) => {
                   </button>
                   {item.description && (
                      <button className=" mr-2 rounded-lg bg-[#5B41FF] p-2 px-6 text-sm text-white">
-                        ПОДРОБНЕЕ
+                        <NavLink to={`${type}/${item.pageId}`}>
+                           ПОДРОБНЕЕ
+                        </NavLink>
                      </button>
                   )}
                </div>

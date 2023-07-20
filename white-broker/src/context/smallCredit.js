@@ -3,7 +3,7 @@ export const smallCreditData = {
       {
          title: 'Кредит для развития бизнеса',
          sum: 'до 300 млн ₽',
-         payment: 'от 7.5% годовых',
+         payment: '4%-27% годовых',
          deadline: 'до 5 лет',
          description: true,
          pageId: 1,
@@ -11,7 +11,7 @@ export const smallCreditData = {
       {
          title: 'Займ для бизнеса',
          sum: 'до 30 млн ₽',
-         payment: 'от 18% годовых',
+         payment: '4%-27% годовых',
          deadline: 'до 12 месяц',
          description: true,
          pageId: 2,
@@ -19,7 +19,7 @@ export const smallCreditData = {
       {
          title: 'Кредит для ИП',
          sum: 'до 100 млн ₽',
-         payment: 'от 10% годовых',
+         payment: '4%-27% годовых',
          deadline: 'до 10 лет',
          description: true,
          pageId: 3,
@@ -27,7 +27,7 @@ export const smallCreditData = {
       {
          title: 'Оборотный кредит',
          sum: 'до 500 млн ₽',
-         payment: 'от 5.5% годовых',
+         payment: '4%-27% годовых',
          deadline: 'до 5 лет',
          description: true,
          pageId: 4,
@@ -35,7 +35,7 @@ export const smallCreditData = {
       {
          title: 'Кредит на исполнение госконтракта',
          sum: 'до 150 млн ₽',
-         payment: 'от 8.9% годовых',
+         payment: '4%-27% годовых',
          deadline: 'до 3-х лет',
          description: true,
          pageId: 5,
@@ -43,7 +43,7 @@ export const smallCreditData = {
       {
          title: 'Тендерный кредит/займ',
          sum: 'до 150 млн ₽',
-         payment: 'от 2% в месяц',
+         payment: '4%-27% в месяц',
          deadline: 'до 5 лет',
          description: true,
          pageId: 6,
@@ -51,7 +51,7 @@ export const smallCreditData = {
       {
          title: 'Овердрафт',
          sum: 'до 30 млн ₽',
-         payment: 'от 12.5% годовых',
+         payment: '4%-27% годовых',
          deadline: 'до 2-х лет',
          description: true,
          pageId: 7,
@@ -59,7 +59,7 @@ export const smallCreditData = {
       {
          title: 'Бизнес Ипотека',
          sum: 'до 300 млн ₽',
-         payment: 'от 3% годовых',
+         payment: '4%-27% годовых',
          deadline: 'до 15 лет',
          description: true,
          pageId: 8,
@@ -67,7 +67,7 @@ export const smallCreditData = {
       {
          title: 'Потребительский кредит',
          sum: 'до 100 млн ₽',
-         payment: 'от4.5% годовых',
+         payment: '4%-27% годовых',
          deadline: 'до 30 лет',
          description: true,
          pageId: 9,
@@ -75,7 +75,7 @@ export const smallCreditData = {
       {
          title: 'Кредит под залог недвижимости',
          sum: 'до 300 млн ₽',
-         payment: 'от 4% годовых',
+         payment: '4%-27% годовых',
          deadline: 'до 15 лет',
          description: true,
          pageId: 10,
@@ -83,7 +83,7 @@ export const smallCreditData = {
       {
          title: 'Кредит под залог автотранспорта',
          sum: 'до 15 млн ₽',
-         payment: 'от 6% годовых',
+         payment: '4%-27% годовых',
          deadline: 'до 7 лет',
          description: true,
          pageId: 11,
@@ -91,7 +91,7 @@ export const smallCreditData = {
       {
          title: 'Льготное кредитование для бизнеса',
          sum: 'до 100 млн ₽',
-         payment: 'от 3.5% годовых',
+         payment: '4%-27% годовых',
          deadline: 'до 24 месяцев',
          description: true,
          pageId: 12,
@@ -99,7 +99,7 @@ export const smallCreditData = {
       {
          title: 'Банковская гарантия',
          sum: 'до 500 млн ₽',
-         payment: 'от 1.5% годовых',
+         payment: '4%-27% годовых',
          deadline: 'до 5 лет',
          description: true,
          pageId: 13,
@@ -107,7 +107,7 @@ export const smallCreditData = {
       {
          title: 'Факторинг',
          sum: 'до 300 млн ₽',
-         payment: 'от 1.2% в месяц',
+         payment: '4%-27% в месяц',
          deadline: 'бессрочно',
          description: true,
          pageId: 14,
@@ -123,7 +123,7 @@ export const smallCreditData = {
       {
          title: 'Кредит для поставщиков маркетплейсов',
          sum: 'до 50 млн ₽',
-         payment: 'от 12% годовых',
+         payment: '4%-27% годовых',
          deadline: 'до 5 лет',
          description: true,
          pageId: 16,
@@ -131,7 +131,7 @@ export const smallCreditData = {
       {
          title: 'Кредит без залога',
          sum: 'до 10 млн ₽',
-         payment: 'от 8.5% годовых',
+         payment: '4%-27% годовых',
          deadline: 'до 7 лет',
          description: true,
          pageId: 17,
@@ -139,7 +139,7 @@ export const smallCreditData = {
       {
          title: 'Экспресс кредит на оборудование',
          sum: 'до 1 млн ₽',
-         payment: 'от 7.5% годовых',
+         payment: '4%-27% годовых',
          deadline: 'до 5 лет',
          description: true,
          pageId: 18,

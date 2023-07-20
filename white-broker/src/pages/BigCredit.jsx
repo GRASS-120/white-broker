@@ -84,7 +84,7 @@ const BigCredit = () => {
 
          <PurpleBlocks />
          <InfoTabs />
-         <Catalog data={bigCreditData.credit} />
+         <Catalog data={bigCreditData.credit} type={'big'} />
          <SkillsDark />
          <Help />
       </div>
