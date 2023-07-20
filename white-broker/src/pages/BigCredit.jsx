@@ -51,7 +51,7 @@ const BigCredit = () => {
                            </div>
                            <div className=" mr-10">
                               <p className="text-[28px] font-bold text-[#0276FF]">
-                                 от 6.5% годовых
+                                 от 4% годовых
                               </p>
                               <p>без скрытых комиссий и платежей</p>
                            </div>

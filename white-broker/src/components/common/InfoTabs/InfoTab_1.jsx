@@ -10,7 +10,7 @@ const InfoTab_1 = () => {
          <OrderedList>
             <ListItem>Сумма: до 500 000 000 ₽</ListItem>
             <ListItem>Срок: до 30 лет</ListItem>
-            <ListItem>Процентная ставка: от 6.5% годовых</ListItem>
+            <ListItem>Процентная ставка: 4%-27% в месяц</ListItem>
             <ListItem>Цель продукта:</ListItem>
             <UnorderedList>
                <ListItem>Участие в тендерах</ListItem>
