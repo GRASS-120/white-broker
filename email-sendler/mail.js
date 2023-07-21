@@ -21,20 +21,26 @@ class Mail {
          auth: {
             user: EMAIL_HOST_USER,
             pass: EMAIL_HOST_PASSWORD,
-            // jparygojeujtlkti - пароль приложения
          },
       });
    }
 
-   async send(receiver, message) {
-      console.log(receiver, message);
+   async send(message) {
       try {
          const info = await this.#transporter.sendMail({
-            from: 'pokemon9116@yandex.ru',
-            to: receiver,
-            subject: `Welcome to the cum zone ${message.phoneNumber}`,
-            text: message.phoneNumber,
-            html: `<h1>${message.sum}</h1>`,
+            from: EMAIL_HOST_USER,
+            to: EMAIL_HOST_USER,
+            subject: `Запрос от клиента ${message.name}`,
+            text: `${message.name} ${message.phoneNumber} ${message.sum}`,
+            html: 
+            `
+               <div>
+                  <h1>Номер телефона: ${message.phoneNumber}</h1>
+                  <h1>Имя клиента: ${message.name}</h1>
+                  <h1>Необходимая сумма: ${message.sum}</h1>
+                  <h1>Вид кредита: ${message.credit}</h1>
+               </div>
+            `,
          });
          return info.messageId;
       } catch (e) {

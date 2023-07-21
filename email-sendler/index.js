@@ -12,8 +12,8 @@ app.get('/', (req, res) =>
 );
 
 app.post('/mail', async (req, res) => {
-    const { email, message } = req.body;
-    return res.json({ result: await Mail.send(email, message) });
+    const { message } = req.body;
+    return res.json({ result: await Mail.send(message) });
 });
 
 app.listen(process.env.PORT || 3000, () => {
