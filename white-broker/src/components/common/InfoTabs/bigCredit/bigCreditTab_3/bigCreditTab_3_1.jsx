@@ -7,7 +7,7 @@ const bigCreditTab_3_1 = () => {
          <UnorderedList>
             <ListItem>Сумма: до 300 000 000 ₽</ListItem>
             <ListItem>Срок: бессрочно</ListItem>
-            <ListItem>Процентная ставка: от 1.2% в месяц</ListItem>
+            <ListItem>Процентная ставка: 4%-27% в месяц</ListItem>
             <ListItem>Отсрочка: до 210 дней</ListItem>
          </UnorderedList>
       </div>
