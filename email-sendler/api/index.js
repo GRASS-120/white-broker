@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 //     res.send(`Requested from ${req.hostname} : <h1>Hello World</h1>`)
 // });
 
-app.post('/', async (req, res) => {
+app.post('/api', async (req, res) => {
     res.setHeader('Content-Type', 'text/html');
     res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
     const { message } = req.body;
