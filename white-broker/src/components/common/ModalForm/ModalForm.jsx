@@ -1,3 +1,4 @@
+import axios from 'axios';
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -25,9 +26,31 @@ const Form = ({ setIsOpened, defaultSum }) => {
       setIsSubmitSuccessful(false);
    }, [isSubmitSuccessful]);
 
+   const sendEmail = async (data) => {
+      const res = {
+         message: {
+            name: data.name,
+            phoneNumber: data.phoneNumber,
+            sum: data.sum,
+            credit: 'Овердрафт',
+         },
+      };
+      await axios
+         .post('https://wb-email-sendler.vercel.app/api', res)
+         .then(function (response) {
+            console.log(response);
+         })
+         .catch(function (error) {
+            console.log(error);
+         });
+   };
+
    const submit = (data) => {
       setIsSubmitSuccessful(true);
       setIsOpened(false);
+
+      // const res = {...data, }
+      sendEmail(data);
    };
 
    const errorHandler = (e) => {

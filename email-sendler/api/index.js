@@ -1,17 +1,18 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-
 import Mail from './mail.js';
 
 const app = express();
 
-app.use(bodyParser.json());
+const allowCrossDomain = (req, res, next) => {
+    res.header(`Access-Control-Allow-Origin`, `https://white-broker-prod.vercel.app`);
+    res.header(`Access-Control-Allow-Methods`, `GET,PUT,POST,DELETE`);
+    res.header(`Access-Control-Allow-Headers`, `Content-Type`);
+    next();
+  }
 
-// app.get('/', (req, res) => {
-//     res.setHeader('Content-Type', 'text/html');
-//     res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');    
-//     res.send(`Requested from ${req.hostname} : <h1>Hello World</h1>`)
-// });
+app.use(bodyParser.json());
+app.use(allowCrossDomain)
 
 app.post('/api', async (req, res) => {
     res.setHeader('Content-Type', 'text/html');
