@@ -32,7 +32,7 @@ const Form = ({ setIsOpened, defaultSum }) => {
             name: data.name,
             phoneNumber: data.phoneNumber,
             sum: data.sum,
-            credit: 'Овердрафт',
+            credit: 'Овердрафт', // ПОДПРАВЬ ПОТОМ
          },
       };
       await axios
