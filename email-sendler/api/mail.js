@@ -31,14 +31,12 @@ class Mail {
             from: EMAIL_HOST_USER,
             to: EMAIL_HOST_USER,
             subject: `Запрос от клиента ${message.name}`,
-            text: `${message.name} ${message.phoneNumber} ${message.sum}`,
+            text: `${message.name} ${message.sum}`,
             html: 
             `
                <div>
-                  <h1>Номер телефона: ${message.phoneNumber}</h1>
                   <h1>Имя клиента: ${message.name}</h1>
                   <h1>Необходимая сумма: ${message.sum}</h1>
-                  <h1>Вид кредита: ${message.credit}</h1>
                </div>
             `,
          });
