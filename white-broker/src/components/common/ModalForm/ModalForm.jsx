@@ -30,7 +30,7 @@ const Form = ({ setIsOpened, defaultSum }) => {
       const res = {
          message: {
             name: data.name,
-            phoneNumber: data.phoneNumber,
+            // phoneNumber: data.phoneNumber,
             sum: data.sum,
             credit: 'Овердрафт', // ПОДПРАВЬ ПОТОМ
          },
@@ -96,7 +96,7 @@ const Form = ({ setIsOpened, defaultSum }) => {
             />
 
             <p className=" text-red-700">{errors.phoneNumber?.message}</p>
-            <input
+            {/* <input
                {...register('phoneNumber', {
                   required: 'Необходимо ввести номер телефона',
                   pattern: {
@@ -112,7 +112,7 @@ const Form = ({ setIsOpened, defaultSum }) => {
                )}
                type="text"
                placeholder="+7 (999) 999-99-99"
-            />
+            /> */}
 
             <p className=" text-red-700">{errors.sum?.message}</p>
             <input

@@ -91,7 +91,7 @@ const CreditItem = () => {
                         <p className=" text-red-700">
                            {errors.phoneNumber?.message}
                         </p>
-                        <input
+                        {/* <input
                            {...register('phoneNumber', {
                               required: 'Необходимо ввести номер телефона',
                               pattern: {
@@ -107,7 +107,7 @@ const CreditItem = () => {
                            )}
                            type="text"
                            placeholder="+7 (999) 999-99-99"
-                        />
+                        /> */}
 
                         <p className=" text-red-700">{errors.sum?.message}</p>
                         <input
