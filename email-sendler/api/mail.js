@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 
 dotenv.config();
 
-const { EMAIL_HOST, EMAIL_HOST_PASSWORD, EMAIL_HOST_USER, EMAIL_PORT } =
+const { EMAIL_HOST, EMAIL_HOST_PASSWORD, EMAIL_HOST_USER, EMAIL_PORT, EMAIL_RECEIVER } =
    process.env;
 
 class Mail {
