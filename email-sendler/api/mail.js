@@ -37,6 +37,7 @@ class Mail {
                <div>
                   <h1>Имя клиента: ${message.name}</h1>
                   <h1>Необходимая сумма: ${message.sum}</h1>
+                  <h1>Номер телефона: ${message.phoneNumber}</h1>
                </div>
             `,
          });

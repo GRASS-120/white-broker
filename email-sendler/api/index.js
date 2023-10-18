@@ -18,6 +18,7 @@ app.post('/api', async (req, res) => {
     res.setHeader('Content-Type', 'text/html');
     res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
     const { message } = req.body;
+    
     return res.json({ result: await Mail.send(message) });
 });
 
