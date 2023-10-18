@@ -7,7 +7,7 @@ const app = express();
 const allowCrossDomain = (req, res, next) => {
     res.header(`Access-Control-Allow-Origin`, `https://белыйброкер.рф`);
     res.header(`Access-Control-Allow-Methods`, `GET,PUT,POST,DELETE`);
-    res.header(`Access-Control-Allow-Headers`, `Content-Type`);
+    res.header(`Access-Control-Allow-Headers`, `content-type`);
     next();
   }
 
@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(allowCrossDomain)
 
 app.post('/api', async (req, res) => {
-    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('content-type', 'application/json');
     res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
     const { message } = req.body;
     return res.json({ result: await Mail.send(message) });
