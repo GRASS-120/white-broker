@@ -29,7 +29,7 @@ class Mail {
       try {
          const info = await this.#transporter.sendMail({
             from: EMAIL_HOST_USER,
-            to: EMAIL_HOST_USER,
+            to: EMAIL_RECEIVER,
             subject: `Запрос от клиента ${message.name}`,
             text: `${message.name} ${message.sum}`,
             html: 
