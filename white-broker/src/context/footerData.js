@@ -14,11 +14,7 @@ export const footerData = {
          },
          {
             title: 'Тел.:',
-            value: '???',
-         },
-         {
-            title: 'E-mail:',
-            value: '???',
+            value: '+7 (952) 155 5748',
          },
       ],
    },

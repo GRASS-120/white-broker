@@ -18,12 +18,12 @@ const Contacts = () => {
                      <div>
                         <li className="mb-3 flex list-none items-center text-2xl font-semibold">
                            <img className="mr-3" src="call.png" alt="" />
-                           +7 (999) 999-99-99
+                           +7 (952) 155 5748
                         </li>
-                        <li className="mb-3 flex list-none items-center text-2xl font-semibold">
+                        {/* <li className="mb-3 flex list-none items-center text-2xl font-semibold">
                            <img className="mr-3" src="email.png" alt="" />
                            whiteBroker@mail.ru
-                        </li>
+                        </li> */}
                         {/* <li className="mb-3 flex list-none items-center text-2xl font-semibold">
                            <img className="mr-3" src="time.png" alt="" />
                            Пн - Пт с 9:00 до 20:00
