@@ -5,7 +5,7 @@ import Mail from './mail.js';
 const app = express();
 
 const allowCrossDomain = (req, res, next) => {
-    res.header(`Access-Control-Allow-Origin`, `https://xn--90aalbshe0ard8i.xn--p1ai/`);
+    res.header(`Access-Control-Allow-Origin`, `https://белыйброкер.рф`);
     res.header(`Access-Control-Allow-Methods`, `GET,PUT,POST,DELETE`);
     res.header(`Access-Control-Allow-Headers`, `Content-Type`);
     next();
