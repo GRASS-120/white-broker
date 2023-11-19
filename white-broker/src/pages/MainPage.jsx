@@ -43,7 +43,7 @@ const MainPage = () => {
                            <p className="mx-1 text-4xl font-bold">
                               {mainPageData.banner.percent}
                            </p>{' '}
-                           годвых
+                           годовых
                         </div>
                         <button
                            onClick={() => setIsOpened(true)}
@@ -75,7 +75,7 @@ const MainPage = () => {
                            <p className="mx-1 text-4xl font-bold">
                               {mainPageData.banner.percent}
                            </p>{' '}
-                           годвых
+                           годовых
                         </div>
                         <button
                            onClick={() => setIsOpened(true)}
@@ -106,7 +106,7 @@ const MainPage = () => {
                            <p className="mx-1 text-4xl font-bold">
                               {mainPageData.banner.percent}
                            </p>{' '}
-                           годвых
+                           годовых
                         </div>
                         <button
                            onClick={() => setIsOpened(true)}
